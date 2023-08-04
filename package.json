@@ -8,13 +8,17 @@
     "test:unit": "vitest --environment jsdom",
     "build-only": "vite build",
     "type-check": "vue-tsc --noEmit -p tsconfig.vitest.json --composite false",
-    "lint": "eslint . --ext .vue,.js,.jsx,.cjs,.mjs,.ts,.tsx,.cts,.mts --fix --ignore-path .gitignore"
+    "lint": "eslint . --ext .vue,.js,.jsx,.cjs,.mjs,.ts,.tsx,.cts,.mts --fix --ignore-path .gitignore",
+    "supabase:start": "supabase start",
+    "supabase:stop": "supabase stop",
+    "supabase": "supabase"
   },
   "dependencies": {
     "pinia": "^2.0.35",
     "sass": "^1.63.3",
     "sass-loader": "^13.3.2",
     "vue": "^3.2.47",
+    "@supabase/supabase-js": "^2.21.0",
     "vue-router": "^4.1.6"
   },
   "devDependencies": {
@@ -35,6 +39,7 @@
     "typescript": "~5.0.4",
     "vite": "^3.2.7",
     "vitest": "^0.32.0",
-    "vue-tsc": "^0.40.7"
+    "vue-tsc": "^0.40.7",
+    "supabase": "^1.11.4"
   }
 }
