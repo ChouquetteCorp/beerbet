@@ -1,0 +1,125 @@
+@import "@/assets/style/_reset";
+@import "@/assets/style/_libs";
+@import "@/assets/style/_breakpoints.scss";
+@import "@/assets/style/_mixins";
+
+* {
+  font-family: Montserrat, sans-serif !important;
+}
+
+html {
+  font-size: 13px;
+}
+
+body {
+  color: var(--text-color);
+  background: var(--surface-b);
+  line-height: 1.5;
+}
+
+#app {
+  padding: 5vh 5vw;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.pi {
+  font-family: PrimeIcons !important;
+}
+
+h1 {
+  font-size: 2.75rem;
+  font-weight: 500;
+  text-align: center;
+}
+
+h2 {
+  font-size: 1.75rem;
+  font-weight: 500;
+}
+
+h3 {
+  font-size: 1.5rem;
+  font-weight: 500;
+}
+
+h4 {
+  font-size: 1.25rem;
+  font-weight: 500;
+}
+
+h5 {
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+h6 {
+  font-size: 0.875rem;
+  font-weight: 500;
+}
+
+p {
+  font-size: 1rem;
+  font-weight: 400;
+}
+
+a {
+  color: var(--primary-color) !important;
+
+  &:hover,
+  &:focus{
+    text-decoration: underline !important;
+  }
+}
+
+.p-button:focus {
+  transform: scale(1.05);
+}
+
+.p-button-label {
+  font-weight: 500;
+}
+
+@include sm {
+  html {
+    font-size: 14px;
+  }
+
+  #app {
+    width: $screen-sm-min;
+  }
+
+  h1 {
+    font-size: 3rem;
+  }
+
+  h2 {
+      font-size: 2rem;
+  }
+}
+
+@include md {
+  html {
+    font-size: 15px;
+  }
+
+  #app {
+    width: $screen-md-min;
+  }
+}
+
+@include lg {
+  html {
+    font-size: 16px;
+  }
+
+  #app {
+    width: $screen-lg-min;
+  }
+}
+
+@include xl {
+  #app {
+    width: $screen-xl-min;
+  }
+}

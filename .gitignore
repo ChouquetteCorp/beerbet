@@ -21,9 +21,3 @@ coverage
 *.njsproj
 *.sln
 *.sw?
-
-supabase/.branches
-
-tests/e2e/videos
-tests/e2e/screenshots
-scripts/.env.local

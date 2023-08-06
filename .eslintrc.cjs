@@ -13,6 +13,6 @@ module.exports = {
     ecmaVersion: 'latest',
   },
   rules: {
-    'no-console': ['error', { allow: ['warn', 'error'] }],
+    'prettier/prettier': ['error', { endOfLine: 'auto' }],
   },
 }
