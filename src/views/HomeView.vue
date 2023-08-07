@@ -11,8 +11,8 @@
 
 <template>
   <div class="home">
-    <h1>Chouquette Bet</h1>
-    <h2>Le premier site de paris sportifs en ligne, avec des chouquettes</h2>
+    <h1>Beer Bet</h1>
+    <h2>Le premier site de paris sportifs en ligne, avec des bières</h2>
     <div v-if="!auth.isConnected" class="home__buttons">
       <PButton label="Connexion" class="home__button" @click="goTo(LOGIN)" />
     </div>
