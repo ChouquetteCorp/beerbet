@@ -1,12 +1,10 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import HomeView from '@/views/HomeView.vue'
 import LoginView from '@/views/LoginView.vue'
-import ListingEventsView from '@/views/ListingEventsView.vue'
-import MyBetsView from '@/views/MyBetsView.vue'
-import EventView from '@/views/EventView.vue'
 import { APP_ROUTES } from '@/constants'
+import { useAuthStore } from '@/stores/auth'
 
-const { HOME, LOGIN, LISTING_EVENTS, EVENT, MY_BETS } = APP_ROUTES
+const { HOME, LOGIN, LISTING_EVENTS, EVENT, MY_BETS, CREATE } = APP_ROUTES
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -22,29 +20,47 @@ const router = createRouter({
       component: LoginView,
     },
     {
+      path: CREATE + '/:id?',
+      name: 'Création',
+      component: () => import('@/views/CreateView.vue'),
+      meta: {
+        needAuth: true,
+      },
+    },
+    {
       path: LISTING_EVENTS,
       name: 'Évènements',
-      component: ListingEventsView,
+      component: () => import('@/views/ListingEventsView.vue'),
     },
     {
       path: `${EVENT}/:id`,
       name: 'Évènement',
-      component: EventView,
+      component: () => import('@/views/EventView.vue'),
     },
     {
       path: MY_BETS,
       name: 'Mes paris',
-      component: MyBetsView,
+      component: () => import('@/views/MyBetsView.vue'),
+      meta: {
+        needAuth: true,
+      },
     },
   ],
 })
 
-router.beforeEach(async (to) => {
-  if (to.path === HOME) {
-    document.title = 'Chouquette Bet'
-  } else if (to) {
-    document.title = to.name?.toString() + ' | Chouquette Bet'
+router.beforeEach(async (to, _from, next) => {
+  if (to.meta.needAuth) {
+    const auth = useAuthStore()
+    if (!auth.isConnected) {
+      next({ path: LOGIN, query: { redirect: to.fullPath } })
+    }
   }
+  if (to.path === HOME) {
+    document.title = 'Beer Bet'
+  } else if (to) {
+    document.title = to.name?.toString() + ' | Beer Bet'
+  }
+  next()
 })
 
 export default router

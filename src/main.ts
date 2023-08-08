@@ -4,6 +4,7 @@ import App from './App.vue'
 import PrimeVue from 'primevue/config'
 import InputText from 'primevue/inputtext'
 import Button from 'primevue/button'
+import i18n from './lang'
 
 import router from './router'
 
@@ -11,6 +12,7 @@ import './assets/style/main.scss'
 
 const app = createApp(App)
 
+app.use(i18n)
 app.use(createPinia())
 app.use(router)
 app.use(PrimeVue)

@@ -5,7 +5,7 @@
   import Menubar from 'primevue/menubar'
   import BeatLoader from 'vue-spinner/src/BeatLoader.vue'
   import { APP_ROUTES } from '@/constants'
-  const { HOME, LOGIN, LISTING_EVENTS, MY_BETS } = APP_ROUTES
+  const { HOME, LOGIN, LISTING_EVENTS, MY_BETS, CREATE } = APP_ROUTES
   const router = useRouter()
   const auth = useAuthStore()
 
@@ -13,6 +13,11 @@
     { icon: 'pi pi-home', class: 'navbar__home', to: HOME },
     { label: 'Les évènements', to: LISTING_EVENTS },
     { label: 'Mes paris', to: MY_BETS },
+    {
+      label: 'Création',
+      visible: () => auth.isConnected && !isLoading.value,
+      to: CREATE,
+    },
     {
       label: 'Connexion',
       class: 'navbar__log',

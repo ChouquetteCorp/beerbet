@@ -88,7 +88,7 @@ export default defineConfig({
   css: {
     preprocessorOptions: {
       scss: {
-        // additionalData: `@import "@/assets/style/global";`,
+        additionalData: `@import "@/assets/style/global";`,
       },
     },
   },

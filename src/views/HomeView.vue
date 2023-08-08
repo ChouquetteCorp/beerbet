@@ -24,8 +24,6 @@
 </template>
 
 <style scoped lang="scss">
-  @import '@/assets/style/_mixins.scss';
-
   .home {
     margin-top: 15vh;
     display: flex;
