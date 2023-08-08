@@ -1,10 +1,9 @@
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
-del, dfn, em, img, ins, kbd, q, s, samp,
-small, strike, strong, sub, sup, tt, var,
+del, dfn, img, ins, kbd, q, s, samp, strike, strong, sub, sup, tt, var,
 b, u, i, center,
-dl, dt, dd, ol, ul, li,
+dl, dt, dd,
 fieldset, form, label, legend,
 table, caption, tbody, tfoot, thead, tr, th, td,
 article, aside, canvas, details, embed,
@@ -15,6 +14,7 @@ time, mark, audio, video {
   padding: 0;
   border: 0;
   font: inherit;
+  font-family: var(--font-family);
   vertical-align: baseline;
 }
 /* HTML5 display-role reset for older browsers */
@@ -25,9 +25,7 @@ footer, header, hgroup, menu, nav, section {
 body {
   line-height: 1;
 }
-ol, ul {
-  list-style: none;
-}
+
 blockquote, q {
   quotes: none;
 }
@@ -42,6 +40,7 @@ table {
 
 *, *::before, *::after {
   box-sizing: border-box;
+  word-break: break-word;
 }
 * {
   margin: 0;
@@ -50,7 +49,8 @@ html, body {
   min-height: 100%;
 }
 body {
-  min-height: 100vh;
+  min-height: 100vh; // Fallback to the line below
+  min-height: 100dvh;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;

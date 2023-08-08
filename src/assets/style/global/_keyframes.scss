@@ -1,0 +1,89 @@
+@keyframes chouquettes-falling {
+  from {
+    top: -64px
+  }
+  to {
+    top: calc(100% - 26px)
+  }
+}
+
+@keyframes chouquette-mode-rolling {
+  from {
+    transform: rotate(0deg);
+    overflow: hidden;
+  }
+  99.9% {
+    overflow: hidden;
+  }
+  to {
+    transform: rotate(360deg);
+    background-image: url(/src/assets/images/chouquette.png);
+    background-blend-mode: difference;
+    background-repeat: space;
+  }
+}
+
+@keyframes chouquette-mode-rolling-reverse {
+  from {
+    transform: rotate(360deg);
+    background-image: url(/src/assets/images/chouquette.png);
+    background-blend-mode: difference;
+    background-repeat: space;
+    overflow: hidden;
+  }
+  99.9% {
+    overflow: hidden;
+  }
+  to {
+    transform: rotate(0deg);
+  }
+}
+
+@keyframes bounce-in {
+  0% {
+    transform: scale(0);
+  }
+  50% {
+    transform: scale(1.2);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes bounce-in-delay {
+  0% {
+    opacity: 0;
+  }
+  33% {
+    opacity: 0;
+    transform: scale(0);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.1);
+  }
+  90% {
+    transform: scale(1);
+  }
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes shake-animation {
+  0% { transform:translate(0,0) }
+  2.5% { transform:translate(5px,0) }
+  5% { transform:translate(0,0) }
+  7.5% { transform:translate(5px,0) }
+  10% { transform:translate(0,0) }
+  12.5% { transform:translate(5px,0) }
+  15% { transform:translate(0,0) }
+  100% { transform:translate(0,0) }
+}

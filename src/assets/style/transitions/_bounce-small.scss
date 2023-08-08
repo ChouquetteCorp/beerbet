@@ -1,0 +1,6 @@
+.bounce-small-enter-active {
+  animation: bounce-in .3s;
+}
+.bounce-small-leave-active {
+  animation: bounce-in .3s reverse;
+}

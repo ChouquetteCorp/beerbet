@@ -1,3 +1,22 @@
 @import "primevue/resources/primevue.min.css"; //core css
 @import "primeicons/primeicons.css"; //icons
-@import "primevue/resources/themes/vela-blue/theme.css"; //theme
+@import "primevue/resources/themes/vela-orange/theme.css"; //theme
+
+.p-speeddial-action{
+  background: var(--surface-d);
+  color: var(--text-color);
+
+  &:hover{
+    background: var(--surface-f);
+  }
+}
+
+.p-dialog .p-dialog-content {
+  .p-confirm-dialog-message {
+    margin-left: 0;
+    margin-right: 0.5rem;
+  }
+  &:has(.pi) .p-confirm-dialog-message{
+    margin-left: 1rem;
+  }
+}
