@@ -1,25 +1,31 @@
 <script setup lang="ts">
-  import { useRouter } from 'vue-router'
   import { useAuthStore } from '@/stores/auth'
   import { APP_ROUTES } from '@/constants'
-  const { LOGIN, LISTING_EVENTS, MY_BETS } = APP_ROUTES
-  const router = useRouter()
-  const auth = useAuthStore()
 
-  const goTo = (path: string) => router.push(path)
+  const { LOGIN, CREATE, MY_BETS } = APP_ROUTES
+
+  const auth = useAuthStore()
 </script>
 
 <template>
   <div class="home">
-    <h1>Beer Bet</h1>
-    <h2>Le premier site de paris sportifs en ligne, avec des bières</h2>
-    <div v-if="!auth.isConnected" class="home__buttons">
-      <PButton label="Connexion" class="home__button" @click="goTo(LOGIN)" />
-    </div>
-    <div v-else class="home__buttons">
-      <PButton label="Les évènements" class="home__button" @click="goTo(LISTING_EVENTS)" />
-      <PButton label="Mes paris" class="home__button p-button-secondary" @click="goTo(MY_BETS)" />
-    </div>
+    <h1>{{ $t('Home.title') }}</h1>
+    <h2>{{ $t('Home.subtitle') }}</h2>
+    <transition name="fade" mode="out-in">
+      <div v-if="!auth.isConnected" class="home__buttons">
+        <RouterLink :to="LOGIN">
+          <PButton :label="$t('Home.loginBtn')" class="home__button" />
+        </RouterLink>
+      </div>
+      <div v-else class="home__buttons">
+        <RouterLink :to="MY_BETS">
+          <PButton :label="$t('Home.myBetsBtn')" class="home__button" />
+        </RouterLink>
+        <RouterLink :to="CREATE">
+          <PButton :label="$t('Home.createBtn')" class="home__button p-button-outlined" />
+        </RouterLink>
+      </div>
+    </transition>
   </div>
 </template>
 
@@ -34,11 +40,14 @@
     text-align: center;
 
     h1 {
-      font-family: 'Segoe Script', cursive !important;
-      font-size: 4rem;
+      font-size: 4.5rem;
 
       @include sm {
-        font-size: 4.6rem;
+        font-size: 5rem;
+      }
+
+      @include md {
+        font-size: 5.5rem;
       }
     }
 
