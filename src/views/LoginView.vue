@@ -2,12 +2,16 @@
   import { ref } from 'vue'
   import ChCard from '../components/ChCard.vue'
   import { useAuthStore } from '@/stores/auth'
+  import { APP_ROUTES } from '@/constants'
+  import { useRouter } from 'vue-router'
   const auth = useAuthStore()
 
   const email = ref('')
   const loading = ref(false)
   const error = ref(false)
   const success = ref(false)
+
+  const router = useRouter()
 
   const onSubmit = async (e: Event) => {
     e.preventDefault()

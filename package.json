@@ -14,12 +14,16 @@
     "supabase": "supabase"
   },
   "dependencies": {
+    "browser-image-compression": "^2.0.2",
     "pinia": "^2.0.35",
+    "primeicons": "^6.0.1",
+    "primevue": "^3.29.0",
     "sass": "^1.63.3",
     "sass-loader": "^13.3.2",
     "vue": "^3.2.47",
-    "@supabase/supabase-js": "^2.21.0",
-    "vue-router": "^4.1.6"
+    "@supabase/supabase-js": "^2.32.0",
+    "vue-router": "^4.1.6",
+    "vue-spinner": "^1.0.4"
   },
   "devDependencies": {
     "@rushstack/eslint-patch": "^1.3.2",

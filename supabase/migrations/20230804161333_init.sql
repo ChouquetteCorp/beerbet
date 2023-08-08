@@ -31,7 +31,7 @@ create table "public"."events" (
     "invite_code" uuid not null default uuid_generate_v4(),
     "type" event_types not null default 'private'::event_types,
     "date_finish" timestamp with time zone,
-    "unit" event_units not null default 'chouquette'::event_units
+    "unit" event_units not null default 'beer'::event_units
 );
 
 
