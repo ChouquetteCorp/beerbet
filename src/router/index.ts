@@ -40,11 +40,6 @@ const router = createRouter({
       },
     },
     {
-      path: LISTING_EVENTS,
-      name: 'Évènements',
-      component: () => import('@/views/ListingEventsView.vue'),
-    },
-    {
       path: `${EVENT}/:id`,
       name: 'Évènement',
       component: () => import('@/views/EventView.vue'),
@@ -55,6 +50,14 @@ const router = createRouter({
       component: () => import('@/views/MyBetsView.vue'),
       meta: {
         needAuth: true,
+      },
+    },
+    {
+      path: '/:pathMatch(.*)*',
+      name: '404',
+      component: () => import('@/views/ErrorView.vue'),
+      meta: {
+        availableOffline: true,
       },
     },
   ],

@@ -5,28 +5,32 @@
   import Menubar from 'primevue/menubar'
   import BeatLoader from 'vue-spinner/src/BeatLoader.vue'
   import { APP_ROUTES } from '@/constants'
-  const { HOME, LOGIN, LISTING_EVENTS, MY_BETS, CREATE } = APP_ROUTES
+  import { useI18n } from 'vue-i18n'
+  import DynamicDialog from 'primevue/dynamicdialog'
+
+  const { HOME, LOGIN, MY_BETS, CREATE } = APP_ROUTES
   const router = useRouter()
   const auth = useAuthStore()
+  const { t } = useI18n()
 
   const items = ref([
     { icon: 'pi pi-home', class: 'navbar__home', to: HOME },
-    { label: 'Les évènements', to: LISTING_EVENTS },
-    { label: 'Mes paris', to: MY_BETS },
+    { label: t('MyBetsView.title'), to: MY_BETS, visible: () => auth.isConnected && !isLoading.value },
     {
-      label: 'Création',
+      label: t('CreateView.createTitle'),
       visible: () => auth.isConnected && !isLoading.value,
       to: CREATE,
     },
+    { class: 'spacer', separator: true },
     {
-      label: 'Connexion',
+      label: t('LoginView.title'),
       class: 'navbar__log',
       icon: 'pi pi-fw pi-power-off',
       visible: () => !auth.isConnected && !isLoading.value,
       to: LOGIN,
     },
     {
-      label: 'Déconnexion',
+      label: t('LogoutView.title'),
       class: 'navbar__log',
       icon: 'pi pi-fw pi-power-off',
       visible: () => auth.isConnected && !isLoading.value,
@@ -36,11 +40,11 @@
 
   const isLoading = ref(false)
 
-  const logoutAndGoHome = async () => {
+  async function logoutAndGoHome() {
     isLoading.value = true
+    router.push(HOME)
     await auth.logout()
     isLoading.value = false
-    router.push(HOME)
   }
 </script>
 
@@ -48,17 +52,24 @@
   <div class="navbar-container">
     <Menubar :model="items" class="navbar" />
     <BeatLoader :loading="isLoading" color="var(--primary-color)" size="0.5rem" />
+
+    <DynamicDialog />
   </div>
 </template>
 
 <style scoped lang="scss">
   .navbar-container {
     position: relative;
+    z-index: 1;
   }
 
   .navbar {
     margin-bottom: 5vh;
     position: relative;
+  }
+
+  ::v-deep(.p-menubar-root-list) {
+    width: 100%;
   }
 
   ::v-deep(.navbar__home .p-menuitem-icon) {
@@ -86,13 +97,16 @@
   .v-spinner {
     position: absolute;
     right: 1.5rem;
-    top: 1.1rem;
+    top: 0.85rem;
   }
 
   @media (min-width: 960px) {
-    ::v-deep(.navbar__log) {
-      position: absolute !important;
-      right: 0.5rem;
+    ::v-deep(.spacer) {
+      flex-grow: 1;
+    }
+
+    .v-spinner {
+      top: 1.1rem;
     }
   }
 </style>

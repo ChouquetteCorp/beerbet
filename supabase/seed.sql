@@ -1,8 +1,8 @@
 
-INSERT INTO auth.users ( id, email) VALUES ('d65e1ec1-ac6a-4d97-b4c2-469f43da5d91', 'test@chouquettebet.fr');
-INSERT INTO auth.users ( id, email) VALUES ('a9b07459-a01e-447a-9ec5-919bc5da33e1', 'test2@chouquettebet.fr');
-INSERT INTO auth.users ( id, email) VALUES ('8b30718d-85f6-449a-9347-be1bac1b406c', 'test3@chouquettebet.fr');
-INSERT INTO auth.users ( id, email) VALUES ('6404ecda-a3af-4b50-bf8c-c102bf6e05a7', 'test4@chouquettebet.fr');
+INSERT INTO auth.users ( id, email) VALUES ('d65e1ec1-ac6a-4d97-b4c2-469f43da5d91', 'test@test.fr');
+INSERT INTO auth.users ( id, email) VALUES ('a9b07459-a01e-447a-9ec5-919bc5da33e1', 'test2@test.fr');
+INSERT INTO auth.users ( id, email) VALUES ('8b30718d-85f6-449a-9347-be1bac1b406c', 'test3@test.fr');
+INSERT INTO auth.users ( id, email) VALUES ('6404ecda-a3af-4b50-bf8c-c102bf6e05a7', 'test4@test.fr');
 
 update auth.users set
   "role" = 'authenticated',
@@ -27,7 +27,7 @@ UPDATE profiles SET old_usernames = '{"Michel", "Cédric", "Thomas"}' WHERE user
 
 
 INSERT INTO public.events VALUES 
-  (1, TO_TIMESTAMP('2022-11-01 11:30:28', 'YYYY-MM-DD HH:MI:SS'),TO_TIMESTAMP('2023-11-25 11:31:44', 'YYYY-MM-DD HH:MI:SS'),'Le Grand champion (only niji)','Une bataille incontournable','Le parie se fait sur la forme d un pot commun','Nantes','d65e1ec1-ac6a-4d97-b4c2-469f43da5d91','{"Jean", "Ervin"}', 'https://xszsqmzqzrgkpqzwuhpi.supabase.co/storage/v1/object/public/bucket-public/versus1.jpg', NULL, false, 'niji.fr', '46b5883c-9c93-4d48-9af3-49a835454633', 'private', NULL ),
+  (1, TO_TIMESTAMP('2022-11-01 11:30:28', 'YYYY-MM-DD HH:MI:SS'),TO_TIMESTAMP('2023-11-25 11:31:44', 'YYYY-MM-DD HH:MI:SS'),'Le Grand champion','Une bataille incontournable','Le parie se fait sur la forme d un pot commun','Nantes','d65e1ec1-ac6a-4d97-b4c2-469f43da5d91','{"Jean", "Ervin"}', 'https://xszsqmzqzrgkpqzwuhpi.supabase.co/storage/v1/object/public/bucket-public/versus1.jpg', NULL, false, 'niji.fr', '46b5883c-9c93-4d48-9af3-49a835454633', 'private', NULL ),
   (2, TO_TIMESTAMP('2022-11-01 11:30:28', 'YYYY-MM-DD HH:MI:SS'),TO_TIMESTAMP('2022-11-25 11:31:44', 'YYYY-MM-DD HH:MI:SS'),'Event 2 (not for test3)','Une bataille incontournable','Le parie se fait sur la forme d un pot commun','Nantes','d65e1ec1-ac6a-4d97-b4c2-469f43da5d91','{"Jean", "Ervin"}', 'https://xszsqmzqzrgkpqzwuhpi.supabase.co/storage/v1/object/public/bucket-public/versus2.jpg', 'Jean', true, NULL, 'b2037202-c155-4ea5-99c0-6c37fe4717bf', 'private', TO_TIMESTAMP('2022-11-26 11:30:28', 'YYYY-MM-DD HH:MI:SS') );
 
 SELECT setval('events_id_seq', 2);
