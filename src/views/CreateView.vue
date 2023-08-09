@@ -13,18 +13,22 @@
   import { useEventStore } from '@/stores/event'
   import imageCompression from 'browser-image-compression'
   import { getRandomDefaultImage } from '@/utils/event'
+  import { useMatchStore } from '@/stores/match'
+  import { useI18n } from 'vue-i18n'
 
   const { EVENT } = APP_ROUTES
   const auth = useAuthStore()
   const eventStore = useEventStore()
+  const matchStore = useMatchStore()
   const router = useRouter()
   const route = useRoute()
+  const { t } = useI18n()
 
   const isLoading = ref(false)
   const isExistingEvent = computed(() => route.params.id as string)
 
   onMounted(async () => {
-    // TODO : reset stroe
+    eventStore.resetCurrentEvent()
     if (route.params.id) {
       await eventStore.setEvent(route.params.id as string)
 
@@ -40,8 +44,20 @@
       defaultImage.value = getRandomDefaultImage()
     }
 
-    // TODO: Set match
+    if (route.query.matchId && !Array.isArray(route.query.matchId)) {
+      await setMatch(route.query.matchId)
+    }
   })
+
+  async function setMatch(id: string) {
+    const match = await matchStore.getMatch(Number(id))
+    if (match) {
+      title.value = match.match
+      location.value = match.venue
+      date.value = new Date(match.date)
+      propositions.value = [match.team_a, t('CreateView.chooseMatchNull'), match.team_b]
+    }
+  }
 
   const DEFAULT_DATE = new Date(Date.now() + 7 * 24 * 60 * 60 * 1000) // 7 days from now
 

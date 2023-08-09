@@ -1,10 +1,10 @@
 import { createRouter, createWebHistory } from 'vue-router'
-import HomeView from '@/views/HomeView.vue'
 import LoginView from '@/views/LoginView.vue'
 import { APP_ROUTES } from '@/constants'
 import { useAuthStore } from '@/stores/auth'
+import i18n from '@/lang'
 
-const { HOME, LOGIN, LISTING_EVENTS, EVENT, MY_BETS, CREATE } = APP_ROUTES
+const { HOME, LOGIN, EVENT, MY_BETS, MATCHS, CREATE, INVITE, OFFLINE } = APP_ROUTES
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -12,7 +12,10 @@ const router = createRouter({
     {
       path: HOME,
       name: 'Accueil',
-      component: HomeView,
+      component: () => import('@/views/HomeView.vue'),
+      meta: {
+        availableOffline: true,
+      },
     },
     {
       path: LOGIN,
@@ -32,14 +35,6 @@ const router = createRouter({
       },
     },
     {
-      path: CREATE + '/:id?',
-      name: 'Création',
-      component: () => import('@/views/CreateView.vue'),
-      meta: {
-        needAuth: true,
-      },
-    },
-    {
       path: `${EVENT}/:id`,
       name: 'Évènement',
       component: () => import('@/views/EventView.vue'),
@@ -50,6 +45,32 @@ const router = createRouter({
       component: () => import('@/views/MyBetsView.vue'),
       meta: {
         needAuth: true,
+      },
+    },
+    {
+      path: MATCHS,
+      name: 'Matchs',
+      component: () => import('@/views/MatchView.vue'),
+    },
+    {
+      path: CREATE + '/:id?',
+      name: 'Création',
+      component: () => import('@/views/CreateView.vue'),
+      meta: {
+        needAuth: true,
+      },
+    },
+    {
+      path: INVITE + '/:code',
+      name: 'Invitation',
+      component: LoginView,
+    },
+    {
+      path: OFFLINE,
+      name: 'Hors ligne',
+      component: () => import('@/views/OfflineView.vue'),
+      meta: {
+        availableOffline: true,
       },
     },
     {
@@ -70,10 +91,19 @@ router.beforeEach(async (to, _from, next) => {
       next({ path: LOGIN, query: { redirect: to.fullPath } })
     }
   }
+
   if (to.path === HOME) {
-    document.title = 'Beer Bet'
-  } else if (to) {
-    document.title = to.name?.toString() + ' | Beer Bet'
+    document.title = i18n.global.t('Home.title')
+  } else {
+    if (!navigator.onLine && !to.meta.availableOffline && to.path !== OFFLINE) {
+      next({
+        path: OFFLINE,
+        query: {
+          redirect: to.path,
+        },
+      })
+    }
+    document.title = to.name?.toString() + ' | ' + i18n.global.t('Home.title')
   }
   next()
 })

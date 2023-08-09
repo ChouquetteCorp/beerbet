@@ -1,10 +1,14 @@
 export const APP_ROUTES = Object.freeze({
   HOME: '/',
   LOGIN: '/login',
-  LISTING_EVENTS: '/listing-events',
   EVENT: '/event',
   MY_BETS: '/my-bets',
-  CREATE: '/create',
+  FAQ: '/faq',
+  CREATE: '/creation',
+  INVITE: '/invite',
+  ERROR: '/error',
+  OFFLINE: '/offline',
+  MATCHS: '/matchs',
 })
 
 export const ERROR = 'error'
