@@ -4,6 +4,7 @@ import { supabase } from '@/lib/superbase'
 import { useAuthStore } from '@/stores/auth'
 import type { Event, Bet, Result } from '@/types/interfaces'
 import { ERROR } from '@/constants'
+import { UserResults } from '@/types/enums'
 
 export const useEventStore = defineStore('event', () => {
   const auth = useAuthStore()
@@ -63,6 +64,102 @@ export const useEventStore = defineStore('event', () => {
     if (userBetError) throw userBetError
 
     userBet.value = userBetData[0]
+
+    await setDispatchResults()
+  }
+
+  async function setDispatchResults() {
+    if (!auth.userId || !event.value) return
+    const { data: dispatchResultsData, error: dispatchResultsError } = await supabase
+      .from('results')
+      .select('*, from:from_id(*), to:to_id(*)')
+      .eq('event_id', event.value.id)
+      .or('to_id.eq.' + auth.userId + ',from_id.eq.' + auth.userId + ',from_id.is.null')
+
+    if (dispatchResultsError) throw dispatchResultsError
+    dispatchResults.value = dispatchResultsData
+    setUserResult()
+  }
+
+  function setUserResult() {
+    const { Victory, Defeat } = UserResults
+    if (!userBet.value || !event.value) return
+    const isWinner = userBet.value.guess === event.value.winner
+    userResult.value = isWinner ? Victory : Defeat
+  }
+
+  async function setBettors() {
+    if (!event.value) return
+    const { count: bettorsCount, error: bettorsError } = await supabase
+      .from('bets')
+      .select('*', { count: 'exact', head: true })
+      .eq('event_id', event.value.id)
+    if (bettorsError) throw bettorsError
+    event.value.bettors = bettorsCount
+  }
+
+  async function updateBet(number: number, guess: string) {
+    if (number === 0) await deleteBet()
+    else await addBet(number, guess)
+  }
+
+  async function addBet(number: number, guess: string) {
+    if (!auth.userId || !event.value) return
+    const bet = { number, event_id: event.value.id, user_id: auth.userId, guess }
+    const { error: userBetError } = await supabase
+      .from('bets')
+      .upsert(bet)
+      .eq('event_id', event.value.id)
+      .eq('user_id', auth.userId)
+
+    if (userBetError) throw userBetError
+
+    userBet.value = bet
+  }
+
+  async function deleteBet() {
+    if (!auth.userId || !event.value) return
+    const { error: userBetError } = await supabase
+      .from('bets')
+      .delete()
+      .eq('event_id', event.value.id)
+      .eq('user_id', auth.userId)
+
+    if (userBetError) throw userBetError
+    if (userBet.value) userBet.value = null
+  }
+
+  async function endBet(winner: string) {
+    if (!auth.userId || !event.value) return
+    const { error: endBetError } = await supabase.functions.invoke('end-bet/' + event.value.id, {
+      body: { winner },
+    })
+    if (endBetError) throw endBetError
+    await setAllEvents()
+  }
+
+  function resetEventStore() {
+    allEvents.value = null
+    resetCurrentEvent()
+  }
+
+  function resetCurrentEvent() {
+    event.value = null
+    userBet.value = null
+    dispatchResults.value = null
+    userResult.value = null
+  }
+
+  async function deleteEvent() {
+    if (!event.value || !auth.userId || !isMyEvent.value) return
+    const { error: errorBet } = await supabase.from('bets').delete().eq('event_id', event.value.id)
+    if (errorBet) throw errorBet
+    const { error: errorEvent } = await supabase.from('events').delete().eq('id', event.value.id)
+    if (errorEvent) throw errorEvent
+
+    // remove event from allEvents
+    const eventIndex = allEvents.value?.findIndex((e) => e.id === event.value?.id)
+    if (eventIndex) allEvents.value?.splice(eventIndex, 1)
   }
 
   return {
@@ -77,5 +174,11 @@ export const useEventStore = defineStore('event', () => {
     isMyEvent,
     setAllEvents,
     setEvent,
+    setBettors,
+    updateBet,
+    endBet,
+    resetEventStore,
+    resetCurrentEvent,
+    deleteEvent,
   }
 })

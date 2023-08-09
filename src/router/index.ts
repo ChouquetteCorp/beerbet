@@ -18,6 +18,18 @@ const router = createRouter({
       path: LOGIN,
       name: 'Connexion',
       component: LoginView,
+      beforeEnter(to, from, next) {
+        if (!to.query.redirect) {
+          next({
+            ...to,
+            query: {
+              redirect: from.path,
+            },
+          })
+          return
+        }
+        next()
+      },
     },
     {
       path: CREATE + '/:id?',
