@@ -9,7 +9,7 @@ import ToastService from 'primevue/toastservice'
 import ConfirmationService from 'primevue/confirmationservice'
 import DialogService from 'primevue/dialogservice'
 import Skeleton from 'primevue/skeleton'
-
+import Tooltip from 'primevue/tooltip'
 import router from './router'
 
 import './assets/style/main.scss'
@@ -23,6 +23,7 @@ app.use(PrimeVue)
 app.use(ToastService)
 app.use(ConfirmationService)
 app.use(DialogService)
+app.directive('tooltip', Tooltip)
 
 app.component('PInputText', InputText)
 app.component('PButton', Button)

@@ -6,12 +6,16 @@
   import BeatLoader from 'vue-spinner/src/BeatLoader.vue'
   import { APP_ROUTES } from '@/constants'
   import { useI18n } from 'vue-i18n'
+  import { useDialog } from 'primevue/usedialog'
   import DynamicDialog from 'primevue/dynamicdialog'
+  import ProfileEdition from './ProfileEdition.vue'
 
-  const { HOME, LOGIN, MY_BETS, CREATE } = APP_ROUTES
+  const { HOME, LOGIN, MY_BETS, CREATE, MATCHS } = APP_ROUTES
   const router = useRouter()
   const auth = useAuthStore()
   const { t } = useI18n()
+
+  const dialog = useDialog()
 
   const items = ref([
     { icon: 'pi pi-home', class: 'navbar__home', to: HOME },
@@ -21,6 +25,10 @@
       visible: () => auth.isConnected && !isLoading.value,
       to: CREATE,
     },
+    {
+      label: t('MatchView.title'),
+      to: MATCHS,
+    },
     { class: 'spacer', separator: true },
     {
       label: t('LoginView.title'),
@@ -28,6 +36,13 @@
       icon: 'pi pi-fw pi-power-off',
       visible: () => !auth.isConnected && !isLoading.value,
       to: LOGIN,
+    },
+    {
+      label: t('ProfileEdition.titleShort'),
+      class: 'navbar__log',
+      icon: 'pi pi-user',
+      visible: () => auth.isConnected && !isLoading.value,
+      command: () => showProfileEdtion(),
     },
     {
       label: t('LogoutView.title'),
@@ -45,6 +60,18 @@
     router.push(HOME)
     await auth.logout()
     isLoading.value = false
+  }
+
+  function showProfileEdtion() {
+    dialog.open(ProfileEdition, {
+      props: {
+        header: t('ProfileEdition.title'),
+        style: { width: '50vw' },
+        breakpoints: { '992px': '60vw', '768px': '70vw', '576px': '90vw' },
+        modal: true,
+        draggable: false,
+      },
+    })
   }
 </script>
 
