@@ -24,8 +24,7 @@
         animationDelay: `${r1 * 1.5}s`,
         left: `${r2 * 100}%`,
         transform: `rotate(${r3 * 60 - 30}deg)`,
-      }"
-    />
+      }" />
   </div>
 </template>
 

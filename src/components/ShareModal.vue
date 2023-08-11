@@ -54,8 +54,7 @@
     :header="$t('ShareModal.title')"
     :draggable="false"
     dismissable-mask
-    modal
-  >
+    modal>
     <div class="p-inputgroup">
       <PInputText type="url" readonly :value="url" />
       <PButton icon="pi pi-copy" class="p-button-info" @click="copy" />
@@ -66,8 +65,7 @@
         class="p-button-help share-modal__share-btn"
         icon="pi pi-share-alt"
         :label="$t('ShareModal.shareBtn')"
-        @click="share"
-      />
+        @click="share" />
     </div>
   </Dialog>
 </template>

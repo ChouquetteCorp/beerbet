@@ -128,8 +128,7 @@
       direction="up"
       :show-icon="`pi ${isLoading && loadingAction === EventActions.Delete ? 'pi-spin pi-spinner' : 'pi-cog'}`"
       :disabled="isLoading"
-      :tooltip-options="{ position: 'left', event: 'hover' }"
-    />
+      :tooltip-options="{ position: 'left', event: 'hover' }" />
   </div>
   <ConfirmDialog group="deleteEvent" :breakpoints="{ '992px': '60vw', '768px': '70vw', '576px': '90vw' }" />
   <ConfirmDialog group="endBet" :breakpoints="{ '992px': '60vw', '768px': '70vw', '576px': '90vw' }">

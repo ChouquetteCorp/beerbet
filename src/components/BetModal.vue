@@ -1,3 +1,4 @@
+<!-- eslint-disable vue/no-setup-props-destructure -->
 <script setup lang="ts">
   import { ref } from 'vue'
   import Dialog from 'primevue/dialog'
@@ -50,8 +51,7 @@
     modal
     :draggable="false"
     :closable="!isBetSending"
-    @update:visible="emit('update-visibility', $event)"
-  >
+    @update:visible="emit('update-visibility', $event)">
     <p>{{ $t('BetModal.questionGuess') }}</p>
     <div class="bet-modal__guesses-wrapper">
       <PButton
@@ -61,8 +61,7 @@
         :class="{ 'p-button-outlined': tmpGuess !== guess }"
         :label="guess"
         :disabled="isBetSending"
-        @click="tmpGuess = guess"
-      />
+        @click="tmpGuess = guess" />
     </div>
     <p>{{ $t('BetModal.questionNumber') }}</p>
     <div class="bet-modal__bet-images-wrapper">
@@ -73,8 +72,7 @@
             :key="`chouquette${index}`"
             :src="chouquette"
             class="bet-modal__chouquette"
-            alt="chouquette"
-          />
+            alt="chouquette" />
         </transition-group>
         <img v-else :src="cryingBaby" class="bet-modal__crying-baby" alt="crying baby" />
       </transition>
@@ -88,16 +86,14 @@
             :class="{ 'p-button--disabled': tmpBet <= 0 }"
             icon="pi pi-minus"
             :disabled="isBetSending"
-            @click="tmpBet > 0 && tmpBet--"
-          />
+            @click="tmpBet > 0 && tmpBet--" />
           <PButton
             data-test="plus-button"
             class="p-button-rounded"
             :class="{ 'p-button--disabled': tmpBet >= 10 }"
             icon="pi pi-plus"
             :disabled="isBetSending"
-            @click="tmpBet < 10 && tmpBet++"
-          />
+            @click="tmpBet < 10 && tmpBet++" />
         </div>
         <div class="bet-modal__submit-wrapper">
           <transition name="bounce-small" mode="out-in">
@@ -107,16 +103,14 @@
               class="p-button-success"
               :icon="`pi ${isBetSending ? 'pi-spin pi-spinner' : 'pi-thumbs-up'}`"
               :disabled="isBetSending || !tmpGuess"
-              @click="sendMyBet()"
-            />
+              @click="sendMyBet()" />
             <PButton
               v-else
               :label="$t('BetModal.cancelBet')"
               class="p-button-danger"
               :icon="`pi ${isBetSending ? 'pi-spin pi-spinner' : 'pi-thumbs-down'}`"
               :disabled="isBetSending"
-              @click="sendMyBet()"
-            />
+              @click="sendMyBet()" />
           </transition>
         </div>
       </div>
