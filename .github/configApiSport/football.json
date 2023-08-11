@@ -1,0 +1,20 @@
+{
+    "columns":{
+        "sport": "sport",
+        "league": "league.name",
+        "date": "fixture.date",
+        "team_a": "teams.home.name",
+        "team_b": "teams.away.name",
+        "venue": "fixture.venue.name",
+        "city": "fixture.venue.city",
+        "api_id": "fixture.id"
+    },
+    "leagues": {
+        "football": [
+            {
+                "league": 8,
+                "season": 2023
+            }
+        ]
+    }
+}

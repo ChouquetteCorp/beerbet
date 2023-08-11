@@ -10,7 +10,7 @@
   import DynamicDialog from 'primevue/dynamicdialog'
   import ProfileEdition from './ProfileEdition.vue'
 
-  const { HOME, LOGIN, MY_BETS, CREATE, MATCHS } = APP_ROUTES
+  const { HOME, LOGIN, MY_BETS, FAQ, CREATE, MATCHS } = APP_ROUTES
   const router = useRouter()
   const auth = useAuthStore()
   const { t } = useI18n()
@@ -29,6 +29,7 @@
       label: t('MatchView.title'),
       to: MATCHS,
     },
+    { label: t('FAQView.titleShort'), to: FAQ },
     { class: 'spacer', separator: true },
     {
       label: t('LoginView.title'),

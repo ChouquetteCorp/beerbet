@@ -4,7 +4,7 @@ import { APP_ROUTES } from '@/constants'
 import { useAuthStore } from '@/stores/auth'
 import i18n from '@/lang'
 
-const { HOME, LOGIN, EVENT, MY_BETS, MATCHS, CREATE, INVITE, OFFLINE } = APP_ROUTES
+const { HOME, LOGIN, EVENT, MY_BETS, MATCHS, FAQ, CREATE, INVITE, OFFLINE } = APP_ROUTES
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -45,6 +45,14 @@ const router = createRouter({
       component: () => import('@/views/MyBetsView.vue'),
       meta: {
         needAuth: true,
+      },
+    },
+    {
+      path: FAQ,
+      name: 'FAQ',
+      component: () => import('@/views/FAQView.vue'),
+      meta: {
+        availableOffline: true,
       },
     },
     {
