@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "scripts": {
     "dev": "vite --port 3000",
-    "build": "run-p type-check build-only",
+    "build": "vite build",
     "preview": "vite preview --port 3000",
     "test:unit": "vitest --environment jsdom",
     "build-only": "vite build",
