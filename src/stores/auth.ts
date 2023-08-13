@@ -75,6 +75,20 @@ export const useAuthStore = defineStore('auth', () => {
     profile.value = data[0]
   }
 
+  async function changeUsername(username: string) {
+    if (!userId.value || !profile.value) return
+
+    const { error } = await supabase
+      .from('profiles')
+      .update({
+        username,
+      })
+      .eq('user_id', userId.value)
+
+    if (error) throw error
+    profile.value.username = username
+  }
+
   return {
     profile,
     session,
@@ -84,6 +98,7 @@ export const useAuthStore = defineStore('auth', () => {
     updateConnection,
     logout,
     signInWithEmail,
+    changeUsername,
     setProfile,
   }
 })
