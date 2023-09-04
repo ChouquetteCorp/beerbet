@@ -140,18 +140,21 @@
                   v-if="!isEventEnded"
                   class="event__button p-button-secondary"
                   :label="$t('EventView.editBtn')"
-                  @click="isBetModalVisible = true" />
+                  @click="isBetModalVisible = true"
+                />
               </div>
               <PButton
                 v-else-if="!isEventEnded"
                 class="event__button event__button--wide"
                 :label="$t('EventView.betBtn')"
-                @click="isBetModalVisible = true" />
+                @click="isBetModalVisible = true"
+              />
             </transition>
             <EventActions
               v-if="!eventStore.event?.is_finish && eventStore.isMyEvent"
               :is-event-ended="isEventEnded"
-              @close-event="loadEvent()" />
+              @close-event="loadEvent()"
+            />
             <p v-else-if="isEventEnded" class="event__ended-sentence">
               {{ $t('EventView.eventEnded') }}
             </p>
@@ -170,7 +173,8 @@
       :guesses="guesses || []"
       :is-bet-sending="isBetSending"
       @update-visibility="isBetModalVisible = $event"
-      @set-my-bet="setMyBet($event)" />
+      @set-my-bet="setMyBet($event)"
+    />
   </div>
 </template>
 

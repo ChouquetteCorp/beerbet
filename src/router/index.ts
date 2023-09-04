@@ -4,7 +4,7 @@ import { APP_ROUTES } from '@/constants'
 import { useAuthStore } from '@/stores/auth'
 import i18n from '@/lang'
 
-const { HOME, LOGIN, EVENT, MY_BETS, MATCHS, FAQ, CREATE, INVITE, OFFLINE } = APP_ROUTES
+const { HOME, LOGIN, EVENT, MY_BETS, MATCHS, FAQ, CREATE, INVITE, OFFLINE, PRIVACY, LEGAL } = APP_ROUTES
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -72,6 +72,22 @@ const router = createRouter({
       path: INVITE + '/:code',
       name: 'Invitation',
       component: LoginView,
+    },
+    {
+      path: PRIVACY,
+      name: 'Politique de confidentialité',
+      component: () => import('@/views/PrivacyView.vue'),
+      meta: {
+        availableOffline: true,
+      },
+    },
+    {
+      path: LEGAL,
+      name: 'Mentions légales',
+      component: () => import('@/views/LegalView.vue'),
+      meta: {
+        availableOffline: true,
+      },
     },
     {
       path: OFFLINE,

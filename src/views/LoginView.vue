@@ -3,11 +3,16 @@
   import ChCard from '../components/ChCard.vue'
   import { useAuthStore } from '@/stores/auth'
   import { APP_ROUTES } from '@/constants'
+  import { SocialProviders } from '@/types/enums'
   import { useRoute, useRouter } from 'vue-router'
   import { storeToRefs } from 'pinia'
   import { supabase } from '@/lib/superbase'
   import { useToast } from 'primevue/usetoast'
+  import type { Provider } from '@supabase/supabase-js'
+  import { isWebView as isWebViewFunction } from '@/utils/webview'
   import { useI18n } from 'vue-i18n'
+
+  const { Google, Facebook } = SocialProviders
 
   const auth = useAuthStore()
   const router = useRouter()
@@ -16,11 +21,15 @@
 
   const email = ref('')
   const isLoading = ref(false)
+  const providerLoading = ref<Provider | null>(null)
   const error = ref(false)
   const success = ref(false)
+  const isEmailLoginVisible = ref(false)
 
   const { session } = storeToRefs(auth)
   const { t } = useI18n()
+
+  const isWebView = ref(isWebViewFunction())
 
   watch(
     session,
@@ -81,6 +90,19 @@
       isLoading.value = false
     }
   }
+
+  async function signInWithSocialProvider(provider: Provider) {
+    isLoading.value = true
+    providerLoading.value = provider
+    error.value = false
+    try {
+      await auth.signInWithOAuth(provider, getRedirectPath())
+    } catch (err) {
+      error.value = true
+      isLoading.value = false
+      providerLoading.value = null
+    }
+  }
 </script>
 
 <template>
@@ -101,24 +123,82 @@
 
     <form v-else @submit="onSubmit">
       <p v-if="error" class="p-error">{{ $t('LoginView.error') }}</p>
-      <div class="field">
-        <label>
-          {{ $t('LoginView.email') }}
-          <PInputText
-            v-model="email"
-            type="email"
-            name="email"
-            required
-            :class="{ 'p-invalid': error }"
-            placeholder="beer@email.fr" />
-        </label>
+
+      <div v-if="isWebView" class="login__advice">
+        <p>
+          {{ $t('LoginView.webviewMessage') }}
+        </p>
+        <p>
+          {{ $t('LoginView.webviewMessageOpen') }}
+          <b>Chrome</b>
+          /
+          <b>Safari</b>
+          .
+        </p>
+        <p>
+          {{ $t('LoginView.webviewUse') }}
+          <b>« {{ $t('LoginView.connectEmail') }} »</b>
+          .
+        </p>
       </div>
+
       <PButton
-        class="login__btn-send-link"
-        type="submit"
-        :label="isLoading ? $t('LoginView.waitMessage') : $t('LoginView.sendLinkMessage')"
-        :icon="`pi ${isLoading ? 'pi-spin pi-spinner' : 'pi-send'}`"
-        :disabled="isLoading" />
+        class="login__button login__button--google"
+        :class="{ 'login__button--loading': isLoading && providerLoading === Google }"
+        aria-label="Login with Google"
+        :disabled="isLoading || isWebView"
+        @click="signInWithSocialProvider(Google)"
+      >
+        <i :class="`pi ${isLoading && providerLoading === Google ? 'pi-spin pi-spinner' : 'pi-google'}`" />
+        <span>{{ $t('LoginView.connectGoogle') }}</span>
+      </PButton>
+      <PButton
+        class="login__button login__button--facebook"
+        :class="{ 'login__button--loading': isLoading && providerLoading === Facebook }"
+        :disabled="isLoading || isWebView"
+        aria-label="Login with Facebook"
+        @click="signInWithSocialProvider(Facebook)"
+      >
+        <i :class="`pi ${isLoading && providerLoading === Facebook ? 'pi-spin pi-spinner' : 'pi-facebook'}`" />
+        <span>{{ $t('LoginView.connectFacebook') }}</span>
+      </PButton>
+      <PButton
+        class="login__button login__button--mail"
+        aria-label="Login with Email"
+        :disabled="isLoading"
+        @click="isEmailLoginVisible = !isEmailLoginVisible"
+      >
+        <i class="pi pi-envelope"></i>
+        <span>{{ $t('LoginView.connectEmail') }}</span>
+      </PButton>
+
+      <transition name="fade">
+        <div v-if="isEmailLoginVisible">
+          <div class="field">
+            <label>
+              {{ $t('LoginView.email') }}
+              <PInputText
+                v-model="email"
+                type="email"
+                name="email"
+                required
+                :class="{ 'p-invalid': error }"
+                placeholder="chouquette@email.fr"
+              />
+            </label>
+          </div>
+          <PButton
+            class="login__btn-send-link"
+            type="submit"
+            :label="isLoading ? $t('LoginView.waitMessage') : $t('LoginView.sendLinkMessage')"
+            :icon="`pi ${isLoading ? 'pi-spin pi-spinner' : 'pi-send'}`"
+            :disabled="isLoading"
+          />
+        </div>
+      </transition>
+      <p class="login__privacy-link">
+        <router-link to="/privacy">{{ $t('PrivacyView.title') }}</router-link>
+      </p>
     </form>
   </ChCard>
 </template>

@@ -21,7 +21,10 @@
 </script>
 <template>
   <footer>
-    <p>ChouquetteCorp {{ new Date().getFullYear() }} |</p>
+    <p>
+      ChouquetteCorp © {{ new Date().getFullYear() }} |
+      <router-link to="legal">{{ $t('LegalView.title') }}</router-link>
+    </p>
     <img :src="chouquette" width="32" height="32" alt="logo chouquette" @click="toggleChouquetteMode" />
   </footer>
 </template>

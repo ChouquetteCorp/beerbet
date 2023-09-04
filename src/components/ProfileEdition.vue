@@ -29,7 +29,8 @@
       type="submit"
       icon="pi pi-check"
       :label="$t('ProfileEdition.save')"
-      :disabled="!username" />
+      :disabled="!username"
+    />
   </form>
 </template>
 

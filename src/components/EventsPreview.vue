@@ -36,7 +36,8 @@
     :subtitle="event?.subtitle"
     :date="event.date"
     :is-finished="event.is_finish"
-    :is-recently-finished="isRecentlyFinished" />
+    :is-recently-finished="isRecentlyFinished"
+  />
 
   <Paginator
     v-if="events.length > EVENTS_PER_PAGE"
@@ -44,5 +45,6 @@
     :rows="EVENTS_PER_PAGE"
     :total-records="events.length"
     template="PrevPageLink PageLinks NextPageLink"
-    @page="scrollToNavTabs" />
+    @page="scrollToNavTabs"
+  />
 </template>

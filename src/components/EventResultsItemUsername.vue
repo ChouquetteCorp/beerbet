@@ -26,7 +26,10 @@
 
 <template>
   <span @mouseover="showTooltip = true" @mouseleave="showTooltip = false">
-    <strong class="item-username__username" :class="{ 'item-username__username--are-old-usernames': hasOldUsernames }">
+    <strong
+      class="item-username__username"
+      :class="{ 'item-username__username--are-old-usernames': hasOldUsernames }"
+    >
       {{ formatMailName(props.username) }}
     </strong>
     <transition name="fade">

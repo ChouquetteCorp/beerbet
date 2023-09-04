@@ -1,0 +1,59 @@
+{
+    "cells": [
+        {
+            "language": "typescript",
+            "source": [
+                "\nfunction endGame(bets: any[], winner: string) {\n  let { totalWinner, totalLoser, betsWinner, betsLoser, nbWinner, nbLoser } = bets.reduce(\n    (acc, bet) => {\n      if (bet.betFor === winner) {\n        acc.betsWinner.push(bet)\n        acc.totalWinner += bet.count\n        acc.nbWinner++\n      } else {\n        acc.totalLoser += bet.count\n        acc.nbLoser++\n        acc.betsLoser.push(bet)\n      }\n      return acc\n    },\n    { totalWinner: 0, totalLoser: 0, betsWinner: [], betsLoser: [], nbWinner: 0, nbLoser: 0 },\n  )\n\n  const factor = totalLoser / nbLoser\n  const gain = betsWinner.map((bet) => {\n    return {\n      user: bet.user_id,\n      count: (bet.count / totalWinner) * totalLoser,\n    }\n  })\n\n  const result = []\n  gain.forEach((g) => {\n    let nb = g.count\n    betsLoser.every((b) => {\n      if (nb === 0) {\n        return false\n      }\n\n      const nbLoser = b.count\n      if (nbLoser === 0) {\n        return true\n      } else if (nbLoser > nb) {\n        b.count -= nb\n        result.push({\n          user: b.user_id,\n          count: nb.toFixed(1),\n          to: g.user,\n        })\n      } else {\n        result.push({\n          user: b.user_id,\n          count: nbLoser.toFixed(1),\n          to: g.user,\n        })\n        nb -= nbLoser\n        b.count = 0\n      }\n\n      return true\n    })\n  })\n\n  return result\n}\n"
+            ],
+            "outputs": []
+        },
+        {
+            "language": "typescript",
+            "source": [
+                "const bets = [\n  {\n    user_id: \"Melvin\",\n    count: 2,\n    betFor: \"B\",\n  },\n  {\n    user_id: \"Pol\",\n    count: 7,\n    betFor: \"A\",\n  },\n  {\n    user_id: \"Victor\",\n    count: 3,\n    betFor: \"A\",\n  },\n  {\n    user_id: \"Bilel\",\n    count: 4,\n    betFor: \"B\",\n  },\n];\n\nendGame(bets, \"A\");\n"
+            ],
+            "outputs": [
+                {
+                    "items": [
+                        {
+                            "mime": "text/plain",
+                            "value": [
+                                "[",
+                                "  {",
+                                "    user: \u001b[32m'Melvin'\u001b[39m,",
+                                "    count: \u001b[32m'2.0'\u001b[39m,",
+                                "    to: \u001b[32m'Pol'\u001b[39m",
+                                "  },",
+                                "  {",
+                                "    user: \u001b[32m'Bilel'\u001b[39m,",
+                                "    count: \u001b[32m'2.2'\u001b[39m,",
+                                "    to: \u001b[32m'Pol'\u001b[39m",
+                                "  },",
+                                "  {",
+                                "    user: \u001b[32m'Bilel'\u001b[39m,",
+                                "    count: \u001b[32m'1.8'\u001b[39m,",
+                                "    to: \u001b[32m'Victor'\u001b[39m",
+                                "  }",
+                                "]"
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "language": "typescript",
+            "source": [
+                ""
+            ],
+            "outputs": []
+        },
+        {
+            "language": "typescript",
+            "source": [
+                ""
+            ],
+            "outputs": []
+        }
+    ]
+}

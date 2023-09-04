@@ -25,13 +25,15 @@
       <EventResultsItemUsername
         v-if="result.to"
         :username="result.to.username"
-        :old-usernames="result.to.old_usernames" />
+        :old-usernames="result.to.old_usernames"
+      />
     </template>
     <template v-else>
       <EventResultsItemUsername
         v-if="result.from"
         :username="result.from.username"
-        :old-usernames="result.from.old_usernames" />
+        :old-usernames="result.from.old_usernames"
+      />
       {{
         t('EventResultsItem.getMessage', {
           count: props.result.number + ' ' + t('unit', Math.trunc(props.result.number)),

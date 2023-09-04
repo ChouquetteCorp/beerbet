@@ -1,8 +1,8 @@
 
-INSERT INTO auth.users ( id, email) VALUES ('d65e1ec1-ac6a-4d97-b4c2-469f43da5d91', 'test@test.fr');
-INSERT INTO auth.users ( id, email) VALUES ('a9b07459-a01e-447a-9ec5-919bc5da33e1', 'test2@test.fr');
-INSERT INTO auth.users ( id, email) VALUES ('8b30718d-85f6-449a-9347-be1bac1b406c', 'test3@test.fr');
-INSERT INTO auth.users ( id, email) VALUES ('6404ecda-a3af-4b50-bf8c-c102bf6e05a7', 'test4@test.fr');
+INSERT INTO auth.users ( id, email) VALUES ('d65e1ec1-ac6a-4d97-b4c2-469f43da5d91', 'test@chouquettebet.fr');
+INSERT INTO auth.users ( id, email) VALUES ('a9b07459-a01e-447a-9ec5-919bc5da33e1', 'test2@chouquettebet.fr');
+INSERT INTO auth.users ( id, email) VALUES ('8b30718d-85f6-449a-9347-be1bac1b406c', 'test3@chouquettebet.fr');
+INSERT INTO auth.users ( id, email) VALUES ('6404ecda-a3af-4b50-bf8c-c102bf6e05a7', 'test4@chouquettebet.fr');
 
 update auth.users set
   "role" = 'authenticated',

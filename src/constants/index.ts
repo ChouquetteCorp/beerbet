@@ -8,6 +8,8 @@ export const APP_ROUTES = Object.freeze({
   INVITE: '/invite',
   ERROR: '/error',
   OFFLINE: '/offline',
+  LEGAL: '/legal',
+  PRIVACY: '/privacy',
   MATCHS: '/matchs',
 })
 

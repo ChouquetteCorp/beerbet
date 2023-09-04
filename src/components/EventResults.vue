@@ -34,7 +34,8 @@
     :class="{
       'event-results--win': userResult === Victory,
       'event-results--lose': userResult === Defeat,
-    }">
+    }"
+  >
     <div class="event-results__title">
       <h3 v-if="userResult === Victory">
         <img :src="partyPopper" alt="party popper" class="emoji emoji--mirror" />
@@ -58,7 +59,8 @@
         v-for="(dispatchResult, index) in eventStore.dispatchResults"
         :key="`dispatchResult${index}`"
         class="item"
-        :result="dispatchResult" />
+        :result="dispatchResult"
+      />
 
       <div class="event-results__punchline">
         <div v-if="hasEveryoneBetTheSame">

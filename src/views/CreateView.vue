@@ -13,6 +13,7 @@
   import { useEventStore } from '@/stores/event'
   import imageCompression from 'browser-image-compression'
   import { getRandomDefaultImage } from '@/utils/event'
+  import config from '@/config.json'
   import { useMatchStore } from '@/stores/match'
   import { useI18n } from 'vue-i18n'
 
@@ -120,7 +121,7 @@
         author: auth.userId,
         location: location.value,
         ...(defaultImage.value ? { image_url: defaultImage.value } : {}),
-        unit: 'beer',
+        unit: config.unit,
       })
       .select()
 
@@ -191,7 +192,8 @@
                 date-format="dd/mm/yy à "
                 required
                 :min-date="new Date()"
-                :disabled="isLoading" />
+                :disabled="isLoading"
+              />
             </div>
             <div class="field">
               <label for="cover">
@@ -207,7 +209,8 @@
                 :invalid-file-type-message="$t('CreateView.invalidFileTypeMessage')"
                 :choose-label="$t('CreateView.chooseLabel')"
                 :disabled="isLoading"
-                @select="selectCover" />
+                @select="selectCover"
+              />
             </div>
           </div>
         </Panel>
@@ -235,7 +238,8 @@
                   add-on-blur
                   required
                   :allow-duplicate="false"
-                  :disabled="isLoading" />
+                  :disabled="isLoading"
+                />
                 <PButton class="propositions__fake-btn-plus p-button-rounded p-button-outlined" icon="pi pi-plus" />
               </div>
               <small v-if="!isExistingEvent" class="propositions__help">
@@ -257,7 +261,8 @@
         :date="date.toString()"
         :image-url="imageUrl"
         class="creation__event-preview"
-        :class="{ 'creation__event-preview--visible': title.length > 0 && hasImg }" />
+        :class="{ 'creation__event-preview--visible': title.length > 0 && hasImg }"
+      />
     </div>
 
     <PButton
@@ -266,7 +271,8 @@
       class="p-button-success"
       :label="isExistingEvent ? $t('CreateView.editBtn') : $t('CreateView.createBtn')"
       :icon="`pi ${isLoading ? 'pi-spin pi-spinner' : 'pi-check'}`"
-      :disabled="!isValidForm || isLoading" />
+      :disabled="!isValidForm || isLoading"
+    />
   </form>
 </template>
 

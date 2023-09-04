@@ -44,7 +44,8 @@
           :legend="$t('FAQView.Question2.definitionParagraph.example.title')"
           toggleable
           :collapsed="true"
-          class="faq__example">
+          class="faq__example"
+        >
           <p>
             {{ $t('FAQView.Question2.definitionParagraph.example.0') }}
             <br />
@@ -254,7 +255,8 @@
           :legend="$t('FAQView.Question2.definitionParagraph.example.title')"
           toggleable
           :collapsed="true"
-          class="faq__example">
+          class="faq__example"
+        >
           <p>
             {{ $t('FAQView.Question2.dispatchParagraph.exemple.0') }}
             <br />

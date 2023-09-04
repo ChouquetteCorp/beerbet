@@ -15,7 +15,9 @@
   publish = "dist/"
   command = "npm run build"
 
-[[redirects]]
-  from = "/*"
-  to = "/index.html"
-  status = 200
+
+[context.develop]
+  command = "npm run build:staging"
+
+[context.deploy-preview]
+  command = "npm run build:staging"
