@@ -15,4 +15,5 @@ module.exports = {
   rules: {
     'prettier/prettier': ['error', { endOfLine: 'auto' }],
   },
+  ignorePatterns: ['public/push/onesignal/OneSignalSDKWorker.js'],
 }

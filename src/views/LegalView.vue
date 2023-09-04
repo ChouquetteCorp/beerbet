@@ -46,8 +46,7 @@
     Toute exploitation non autorisée du site ou de l’un quelconque des éléments qu’il contient sera considérée comme
     constitutive d’une contrefaçon et poursuivie conformément aux dispositions des articles
     <a
-      href="https://www.legifrance.gouv.fr/affichCodeArticle.do?idArticle=LEGIARTI000032655082&amp;cidTexte=LEGITEXT000006069414&amp;dateTexte=20160605"
-    >
+      href="https://www.legifrance.gouv.fr/affichCodeArticle.do?idArticle=LEGIARTI000032655082&amp;cidTexte=LEGITEXT000006069414&amp;dateTexte=20160605">
       L.335-2 et suivants du Code de Propriété Intellectuelle
     </a>
     .

@@ -49,8 +49,7 @@
     :value="matchStore.allMatchs"
     :global-filter-fields="['league', 'date', 'match', 'venue']"
     paginator
-    :rows="50"
-  >
+    :rows="50">
     <template #header>
       <div class="flex justify-content-end">
         <span class="p-input-icon-left">
@@ -70,8 +69,7 @@
       filter-field="date"
       field="date"
       data-type="date"
-      :header="$t('MatchView.tableHeader.date')"
-    >
+      :header="$t('MatchView.tableHeader.date')">
       <template #body="{ data }">{{ $d(data.date, 'time') }}</template>
     </Column>
     <Column field="venue" :header="$t('MatchView.tableHeader.venue')">

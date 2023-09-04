@@ -64,8 +64,7 @@
     <p>
       Notre utilisation des informations reçues des API Google respectera la
       <a
-        href="https://developers.google.com/terms/api-services-user-data-policy#additional_requirements_for_specific_api_scopes"
-      >
+        href="https://developers.google.com/terms/api-services-user-data-policy#additional_requirements_for_specific_api_scopes">
         Politique relative aux données utilisateur des services d'API Google
       </a>
       , y compris les exigences d'utilisation limitée.
@@ -141,8 +140,7 @@
     <p>
       Our use of information received from Google APIs will adhere to the
       <a
-        href="https://developers.google.com/terms/api-services-user-data-policy#additional_requirements_for_specific_api_scopes"
-      >
+        href="https://developers.google.com/terms/api-services-user-data-policy#additional_requirements_for_specific_api_scopes">
         Google API Services User Data Policy
       </a>
       , including the Limited Use requirements.

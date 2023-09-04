@@ -147,8 +147,7 @@
         :class="{ 'login__button--loading': isLoading && providerLoading === Google }"
         aria-label="Login with Google"
         :disabled="isLoading || isWebView"
-        @click="signInWithSocialProvider(Google)"
-      >
+        @click="signInWithSocialProvider(Google)">
         <i :class="`pi ${isLoading && providerLoading === Google ? 'pi-spin pi-spinner' : 'pi-google'}`" />
         <span>{{ $t('LoginView.connectGoogle') }}</span>
       </PButton>
@@ -157,8 +156,7 @@
         :class="{ 'login__button--loading': isLoading && providerLoading === Facebook }"
         :disabled="isLoading || isWebView"
         aria-label="Login with Facebook"
-        @click="signInWithSocialProvider(Facebook)"
-      >
+        @click="signInWithSocialProvider(Facebook)">
         <i :class="`pi ${isLoading && providerLoading === Facebook ? 'pi-spin pi-spinner' : 'pi-facebook'}`" />
         <span>{{ $t('LoginView.connectFacebook') }}</span>
       </PButton>
@@ -166,8 +164,7 @@
         class="login__button login__button--mail"
         aria-label="Login with Email"
         :disabled="isLoading"
-        @click="isEmailLoginVisible = !isEmailLoginVisible"
-      >
+        @click="isEmailLoginVisible = !isEmailLoginVisible">
         <i class="pi pi-envelope"></i>
         <span>{{ $t('LoginView.connectEmail') }}</span>
       </PButton>
@@ -183,8 +180,7 @@
                 name="email"
                 required
                 :class="{ 'p-invalid': error }"
-                placeholder="chouquette@email.fr"
-              />
+                placeholder="chouquette@email.fr" />
             </label>
           </div>
           <PButton
@@ -192,8 +188,7 @@
             type="submit"
             :label="isLoading ? $t('LoginView.waitMessage') : $t('LoginView.sendLinkMessage')"
             :icon="`pi ${isLoading ? 'pi-spin pi-spinner' : 'pi-send'}`"
-            :disabled="isLoading"
-          />
+            :disabled="isLoading" />
         </div>
       </transition>
       <p class="login__privacy-link">
