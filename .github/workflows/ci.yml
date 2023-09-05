@@ -36,7 +36,7 @@ jobs:
           # just perform install
           runTests: false
       - name: Start server in the background
-        run: npm run supabase:start -- -x studio,imgproxy,inbucket
+        run: npm run supabase:start -- -x studio,imgproxy,inbucket,pgadmin-schema-diff,migra,postgres-meta,vector,pgbouncer,logflare
       - name: Cypress run
         uses: cypress-io/github-action@v5
         with:
