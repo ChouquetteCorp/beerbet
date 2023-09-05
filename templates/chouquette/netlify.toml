@@ -12,7 +12,7 @@
     '''
 
 [build]
-  base = "templates/beer"
+  base = "templates/choquette"
   publish = "dist/"
   command = "cd ../../ && npm ci &&  npm run transform:choquette && npm run build && mv dist templates/choquette/dist"
 
