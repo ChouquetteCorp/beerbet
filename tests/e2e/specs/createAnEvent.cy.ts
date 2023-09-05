@@ -75,9 +75,9 @@ describe('createAnEvent', () => {
 
     cy.get('.bet-modal__submit-wrapper > .p-button').click()
 
-    cy.get('.p-toast-message-success .p-toast-detail').should('contain', '5 chouquettes pariées')
+    cy.get('.p-toast-message-success .p-toast-detail').should('contain', '5 bières pariées')
 
-    cy.get('.event__bet-sentence').should('contain', 'Tu as parié 5 chouquettes sur « B »')
+    cy.get('.event__bet-sentence').should('contain', 'Tu as parié 5 bières sur « B »')
 
     cy.contains('Modifier mon pari').click()
     cy.get('.bet-modal__chouquettes-wrapper').find('.bet-modal__chouquette').should('have.length', 5)
@@ -86,9 +86,9 @@ describe('createAnEvent', () => {
     cy.get('.bet-modal__chouquettes-wrapper').find('.bet-modal__chouquette').should('have.length', 3)
     cy.get('.bet-modal__submit-wrapper > .p-button').click()
 
-    cy.get('.p-toast-message-success .p-toast-detail').should('contain', '3 chouquettes pariées')
+    cy.get('.p-toast-message-success .p-toast-detail').should('contain', '3 bières pariées')
 
-    cy.get('.event__bet-sentence').should('contain', 'Tu as parié 3 chouquettes sur « B »')
+    cy.get('.event__bet-sentence').should('contain', 'Tu as parié 3 bières sur « B »')
 
     cy.get('.p-speeddial .p-button-icon-only').click()
     cy.get('.p-speeddial-item:nth-child(3) > .p-speeddial-action').click()
