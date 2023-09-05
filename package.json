@@ -21,8 +21,8 @@
     "cypress": "cypress",
     "cypress:open": "cypress open",
     "cypress:run": "cypress run",
-    "transform:choquette": "npx metamorphe transform choquette",
-    "save:choquette": "npx metamorphe save choquette"
+    "transform:chouquette": "npx metamorphe transform chouquette",
+    "save:chouquette": "npx metamorphe save chouquette"
   },
   "dependencies": {
     "@onesignal/onesignal-vue3": "^1.0.2",
