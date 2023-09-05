@@ -59,13 +59,13 @@ export default defineConfig({
         ],
         shortcuts: [
           {
-            name: 'Créer',
+            name: 'Create a bet',
             url: '/creation',
-            description: 'Créer un pari',
+            description: 'Create a bet',
             icons: [{ src: 'icons/pwa-192x192.png', sizes: '192x192' }],
           },
         ],
-        lang: 'fr',
+        lang: 'en',
         icons: [
           {
             src: 'icons/pwa-192x192.png',
