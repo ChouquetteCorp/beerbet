@@ -4,7 +4,7 @@ BeerBet 🍻
 > Vue 3, Vite, TS, PrimeVue, Supabase 💚
 
 Experience a whole new way to enjoy your favorite matches with our sports betting site centered around fun and beers, without any money wagered.
-https://beerbet.chouquettebet.fr/
+https://beer.chouquettebet.fr/
 
 > This project win an award as runner up Most fun category in [Supabase Launch Week 8 Hackathon](https://supabase.com/blog/launch-week-8-hackathon-winners).
 
