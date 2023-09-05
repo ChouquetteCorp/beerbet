@@ -14,11 +14,11 @@
 [build]
   base = "templates/chouquette"
   publish = "dist/"
-  command = "cd ../../ && npm ci &&  npm run transform:choquette && npm run build && mv dist templates/choquette/dist"
+  command = "cd ../../ && npm ci &&  npm run transform:chouquette && npm run build && mv dist templates/chouquette/dist"
 
 
 [context.develop]
-  command = "cd ../../ && npm ci && npm run transform:choquette &&  npm run build:staging && mv dist templates/choquette/dist"
+  command = "cd ../../ && npm ci && npm run transform:chouquette &&  npm run build:staging && mv dist templates/chouquette/dist"
 
 [context.deploy-preview]
-  command = "cd ../../ && npm ci && npm run transform:choquette && npm run build:staging && mv dist templates/choquette/dist"
+  command = "cd ../../ && npm ci && npm run transform:chouquette && npm run build:staging && mv dist templates/chouquette/dist"
