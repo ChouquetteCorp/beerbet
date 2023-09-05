@@ -1,7 +1,13 @@
 describe('HomePage', () => {
   it('should view Home as connected user', () => {
     cy.login('test')
-    cy.visit('/')
+    cy.visit('/', {
+      onBeforeLoad(win) {
+        Object.defineProperty(win.navigator, 'language', {
+          value: 'fr-FR',
+        })
+      },
+    })
 
     cy.get('.navbar__log').should('contain', 'Déconnexion')
     cy.get('.navbar__log').should('not.contain', 'Connexion')
@@ -9,7 +15,13 @@ describe('HomePage', () => {
   })
 
   it('should view Home Page as anonymous user', () => {
-    cy.visit('/')
+    cy.visit('/', {
+      onBeforeLoad(win) {
+        Object.defineProperty(win.navigator, 'language', {
+          value: 'fr-FR',
+        })
+      },
+    })
 
     cy.get('.navbar__log').should('contain', 'Connexion')
     cy.get('.navbar__log').should('not.contain', 'Déconnexion')
