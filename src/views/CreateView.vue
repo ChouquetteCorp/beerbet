@@ -13,6 +13,7 @@
   import { useEventStore } from '@/stores/event'
   import imageCompression from 'browser-image-compression'
   import { getRandomDefaultImage } from '@/utils/event'
+  import config from '@/config.json'
   import { useMatchStore } from '@/stores/match'
   import { useI18n } from 'vue-i18n'
 
@@ -120,7 +121,7 @@
         author: auth.userId,
         location: location.value,
         ...(defaultImage.value ? { image_url: defaultImage.value } : {}),
-        unit: 'beer',
+        unit: config.unit,
       })
       .select()
 

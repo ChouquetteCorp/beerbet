@@ -1,10 +1,14 @@
 import { computed, ref } from 'vue'
 import { defineStore } from 'pinia'
 import { supabase } from '@/lib/superbase'
-import type { Session } from '@supabase/supabase-js'
+import { useEventStore } from '@/stores/event'
+import type { Session, Provider } from '@supabase/supabase-js'
 import type { Profile } from '@/types/interfaces'
+import { useOneSignal } from '@onesignal/onesignal-vue3'
 
 export const useAuthStore = defineStore('auth', () => {
+  const eventStore = useEventStore()
+  const onesignal = useOneSignal()
   const session = ref<Session | null>(null)
   const profile = ref<Profile | null>(null)
   const isLogging = ref(false) // this can't currently be true by default (bug when refresh offline)
@@ -28,6 +32,9 @@ export const useAuthStore = defineStore('auth', () => {
     if (sessionData) {
       // Promise which not need to be await
       setProfile()
+      onesignal.setExternalUserId(sessionData.user.id)
+      if (sessionData.user.email) onesignal.setEmail(sessionData.user.email)
+      onesignal.showNativePrompt()
     }
 
     isLogging.value = false
@@ -47,6 +54,7 @@ export const useAuthStore = defineStore('auth', () => {
   function resetStore() {
     session.value = null
     profile.value = null
+    eventStore.resetEventStore()
   }
 
   async function logout() {
@@ -60,6 +68,17 @@ export const useAuthStore = defineStore('auth', () => {
       email,
       options: {
         emailRedirectTo: window.location.origin + redirect,
+      },
+    })
+    if (error) throw error
+    return data
+  }
+
+  async function signInWithOAuth(provider: Provider, redirect: string = '/') {
+    const { data, error } = await supabase.auth.signInWithOAuth({
+      provider,
+      options: {
+        redirectTo: window.location.origin + redirect,
       },
     })
     if (error) throw error
@@ -89,16 +108,23 @@ export const useAuthStore = defineStore('auth', () => {
     profile.value.username = username
   }
 
+  const domainUser = computed(() => {
+    if (!session.value?.user.email) return
+    return session.value.user.email.split('@')[1]
+  })
+
   return {
     profile,
     session,
     userId,
     isConnected,
     isLogging,
+    domainUser,
     updateConnection,
     logout,
     signInWithEmail,
-    changeUsername,
+    signInWithOAuth,
     setProfile,
+    changeUsername,
   }
 })

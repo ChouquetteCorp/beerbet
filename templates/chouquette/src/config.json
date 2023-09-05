@@ -1,0 +1,17 @@
+{
+    "unit": "chouquette",
+    "defaultEventImgs": [
+        "https://images.unsplash.com/photo-1513870931673-fa0ab3de2e09?ixid=MnwxMjA3fDB8MXxjb2xsZWN0aW9ufDF8Wkhjd2Fkb29CclV8fHx8fDJ8fDE2NzY3NTY1MDY&ixlib=rb-4.0.3&h=310&w=1025&q=80",
+        "https://images.unsplash.com/photo-1517433670267-08bbd4be890f?ixid=MnwxMjA3fDB8MXxjb2xsZWN0aW9ufDJ8Wkhjd2Fkb29CclV8fHx8fDJ8fDE2NzY3NTY1MDY&ixlib=rb-4.0.3&h=310&w=1025&q=80",
+        "https://images.unsplash.com/photo-1568254183919-78a4f43a2877?ixid=MnwxMjA3fDB8MXxjb2xsZWN0aW9ufDN8Wkhjd2Fkb29CclV8fHx8fDJ8fDE2NzY3NTY1MDY&ixlib=rb-4.0.3&h=310&w=1025&q=80",
+        "https://images.unsplash.com/photo-1565182363525-f95648bbeee0?ixid=MnwxMjA3fDB8MXxjb2xsZWN0aW9ufDR8Wkhjd2Fkb29CclV8fHx8fDJ8fDE2NzY3NTY1MDY&ixlib=rb-4.0.3&h=310&w=1025&q=80",
+        "https://images.unsplash.com/photo-1483695028939-5bb13f8648b0?ixid=MnwxMjA3fDB8MXxjb2xsZWN0aW9ufDV8Wkhjd2Fkb29CclV8fHx8fDJ8fDE2NzY3NTY1MDY&ixlib=rb-4.0.3&h=310&w=1025&q=80",
+        "https://images.unsplash.com/photo-1577595927087-dedbe84f0e4d?ixid=MnwxMjA3fDB8MXxjb2xsZWN0aW9ufDZ8Wkhjd2Fkb29CclV8fHx8fDJ8fDE2NzY3NTY1MDY&ixlib=rb-4.0.3&h=310&w=1025&q=80",
+        "https://images.unsplash.com/photo-1579005007697-75b2fe2c88e7?ixid=MnwxMjA3fDB8MXxjb2xsZWN0aW9ufDd8Wkhjd2Fkb29CclV8fHx8fDJ8fDE2NzY3NTY1MDY&ixlib=rb-4.0.3&h=310&w=1025&q=80",
+        "https://images.unsplash.com/photo-1581477544409-11fb412edb55?ixid=MnwxMjA3fDB8MXxjb2xsZWN0aW9ufDh8Wkhjd2Fkb29CclV8fHx8fDJ8fDE2NzY3NTY1MDY&ixlib=rb-4.0.3&h=310&w=1025&q=80",
+        "https://images.unsplash.com/photo-1567752588693-ad10a647c5a3?ixid=MnwxMjA3fDB8MXxjb2xsZWN0aW9ufDl8Wkhjd2Fkb29CclV8fHx8fDJ8fDE2NzY3NTY1MDY&ixlib=rb-4.0.3&h=310&w=1025&q=80",
+        "https://images.unsplash.com/photo-1566698629409-787a68fc5724?ixid=MnwxMjA3fDB8MXxjb2xsZWN0aW9ufDEwfFpIY3dhZG9vQnJVfHx8fHwyfHwxNjc2NzU2NTA2&ixlib=rb-4.0.3&h=310&w=1025&q=80",
+        "https://images.unsplash.com/photo-1549592406-47076c45cd02?ixid=MnwxMjA3fDB8MXxjb2xsZWN0aW9ufDExfFpIY3dhZG9vQnJVfHx8fHwyfHwxNjc2NzU2NTA2&ixlib=rb-4.0.3&h=310&w=1025&q=80",
+        "https://images.unsplash.com/photo-1556471013-0001958d2f12?ixid=MnwxMjA3fDB8MXxjb2xsZWN0aW9ufDEyfFpIY3dhZG9vQnJVfHx8fHwyfHwxNjc2NzU2NTA2&ixlib=rb-4.0.3&h=310&w=1025&q=80"
+    ]
+}

@@ -31,12 +31,18 @@ jobs:
           wget --quiet -O - https://www.postgresql.org/media/keys/ACCC4CF8.asc | sudo apt-key add -
           sudo apt-get update
           sudo apt-get install -y postgresql-15
-
-
-      - name: Add matchs.sql to database
+      - name: Add matchs.sql to database Staging 
         run: |
-          psql -h "db.$PROJECT_ID.supabase.co" -p 5432 -d postgres -U postgres -f matchs.football.sql
-          psql -h "db.$PROJECT_ID.supabase.co" -p 5432 -d postgres -U postgres -f matchs.sql
+          psql -h "db.$STAGING_PROJECT_ID.supabase.co" -p 5432 -d postgres -U postgres -f matchs.football.sql
+          psql -h "db.$STAGING_PROJECT_ID.supabase.co" -p 5432 -d postgres -U postgres -f matchs.sql
         env:
-          PGPASSWORD: ${{ secrets.DB_PASSWORD }}
-          PROJECT_ID: ${{ secrets.PROJECT_ID }}
+          PGPASSWORD: ${{ secrets.STAGING_DB_PASSWORD }}
+          STAGING_PROJECT_ID: ${{ secrets.STAGING_PROJECT_ID }}
+
+      - name: Add matchs.sql to database Prod
+        run: |
+          psql -h "db.$PRODUCTION_PROJECT_ID.supabase.co" -p 5432 -d postgres -U postgres -f matchs.football.sql
+          psql -h "db.$PRODUCTION_PROJECT_ID.supabase.co" -p 5432 -d postgres -U postgres -f matchs.sql
+        env:
+          PGPASSWORD: ${{ secrets.PRODUCTION_DB_PASSWORD }}
+          PRODUCTION_PROJECT_ID: ${{ secrets.PRODUCTION_PROJECT_ID }}

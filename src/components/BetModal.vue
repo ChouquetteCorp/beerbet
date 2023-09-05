@@ -1,4 +1,3 @@
-<!-- eslint-disable vue/no-setup-props-destructure -->
 <script setup lang="ts">
   import { ref } from 'vue'
   import Dialog from 'primevue/dialog'

@@ -39,12 +39,13 @@
   <DataTable
     v-model:filters="filters"
     striped-rows
+    responsive-layout="stack"
     class="p-datatable-sm"
     row-group-mode="subheader"
     group-rows-by="day"
-    responsive-layout="stack"
     state-storage="local"
     state-key="dt-state-match"
+    filter-display="row"
     :value="matchStore.allMatchs"
     :global-filter-fields="['league', 'date', 'match', 'venue']"
     paginator

@@ -4,6 +4,9 @@ import { createClient } from 'https://esm.sh/@supabase/supabase-js@2.0'
 import HttpResponse from '../_shared/HttpResponse.ts'
 import DefineResult from './DefineResult.ts'
 import DispatchCompute from './computes/DispatchCompute.ts'
+import { sendNotification } from '../_shared/notifications/index.ts'
+import { NotificationType } from '../_shared/notifications/utils.ts'
+import { getDomain } from '../_shared/EnvUtils.ts'
 
 export const corsHeaders = {
   'Access-Control-Allow-Origin': '*',
@@ -60,6 +63,19 @@ serve(async (req) => {
       .update({ winner, is_finish: true, date_finish: new Date() })
       .eq('id', event.id)
     if (errorUpdate) throw errorUpdate
+
+    const domain = getDomain(event.unit)
+    await sendNotification(
+      NotificationType.SEE_RESULTS,
+      {
+        eventName: event.title,
+        eventDomain: domain,
+        eventLink: `${domain}/event/${event.id}`,
+        eventImageLink: event.image_url || '',
+        eventType: event.unit as unknown as string,
+      },
+      defineResult.bets.map((bet) => bet.user_id),
+    )
 
     return new HttpResponse(200, { success: true })
   } catch (error) {

@@ -3,8 +3,9 @@ import { defineStore } from 'pinia'
 import { supabase } from '@/lib/superbase'
 import { useAuthStore } from '@/stores/auth'
 import type { Event, Bet, Result } from '@/types/interfaces'
-import { ERROR } from '@/constants'
 import { UserResults } from '@/types/enums'
+import { ERROR } from '@/constants'
+import config from '@/config.json'
 
 export const useEventStore = defineStore('event', () => {
   const auth = useAuthStore()
@@ -34,7 +35,7 @@ export const useEventStore = defineStore('event', () => {
     const { data: eventsData, error: eventsError } = await supabase
       .from('events')
       .select('*, author(*)')
-      .eq('unit', 'beer')
+      .eq('unit', config.unit)
       .order('date')
 
     if (eventsError) throw eventsError

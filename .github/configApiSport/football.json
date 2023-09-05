@@ -12,6 +12,30 @@
     "leagues": {
         "football": [
             {
+                "league": 66,
+                "season": 2023
+            },
+            {
+                "league": 64,
+                "season": 2023
+            },
+            {
+                "league": 61,
+                "season": 2023
+            },
+            {
+                "league": 2,
+                "season": 2023
+            },
+            {
+                "league": 525,
+                "season": 2023
+            },
+            {
+                "league": 3,
+                "season": 2023
+            },
+            {
                 "league": 8,
                 "season": 2023
             }

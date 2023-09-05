@@ -23,3 +23,32 @@ jobs:
 
     - name: Build
       run: npm run build
+
+  cypress-run:
+    needs: integration
+    runs-on: ubuntu-22.04
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+      - name: Install dependencies
+        uses: cypress-io/github-action@v5
+        with:
+          # just perform install
+          runTests: false
+      - name: Start server in the background
+        run: npm run supabase:start -- -x studio,imgproxy,inbucket,pgadmin-schema-diff,migra,postgres-meta,vector,pgbouncer,logflare
+      - name: Cypress run
+        uses: cypress-io/github-action@v5
+        with:
+          install: false
+          start: npm run dev:emulator
+          wait-on: 'http://ip6-localhost:3000'
+          browser: chrome
+          record: true
+          tag: ${{ github.event_name }}
+        env:
+          # pass the Cypress Cloud record key as an environment variable
+          CYPRESS_RECORD_KEY: ${{ secrets.CYPRESS_RECORD_KEY }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          COMMIT_INFO_MESSAGE: ${{ github.event.pull_request.title }}
+          COMMIT_INFO_SHA: ${{ github.event.pull_request.head.sha }}

@@ -1,21 +1,28 @@
 import { fileURLToPath, URL } from 'node:url'
+
 import { defineConfig } from 'vite'
 import vue from '@vitejs/plugin-vue'
 import { VitePWA } from 'vite-plugin-pwa'
+import Sitemap from 'vite-plugin-sitemap'
+import translation from './src/lang/locales/fr.json'
 
 // https://vitejs.dev/config/
 export default defineConfig({
   plugins: [
     vue(),
+    Sitemap({
+      dynamicRoutes: ['/login', '/faq', '/creation', '/error', '/offline', '/legal', '/privacy'],
+      hostname: 'https://beer.chouquettebet.fr/',
+    }),
     VitePWA({
       registerType: 'prompt',
       workbox: {
         globPatterns: ['**/*.{js,css,html,ico,gif,png,svg,json,vue,txt,woff2,ttf}'],
       },
       manifest: {
-        name: 'BeerBet',
-        short_name: 'BeerBet',
-        description: 'BeerBet, a social betting app.',
+        name: translation['PWA']['name'],
+        short_name: translation['PWA']['short_name'],
+        description: translation['PWA']['description'],
         theme_color: '#1f2d40',
         start_url: '/',
         display: 'standalone',
