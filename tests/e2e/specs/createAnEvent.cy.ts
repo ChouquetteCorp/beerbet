@@ -1,7 +1,13 @@
 describe('createAnEvent', () => {
   it('should create an event from list event', () => {
     cy.login('test4')
-    cy.visit('/creation')
+    cy.visit('/creation', {
+      onBeforeLoad(win) {
+        Object.defineProperty(win.navigator, 'language', {
+          value: 'fr-FR',
+        })
+      },
+    })
     cy.get('#title').click()
     cy.get('#title').type('Test Event')
     cy.get('#subtitle').type('new Event')
