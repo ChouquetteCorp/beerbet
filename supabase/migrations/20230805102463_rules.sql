@@ -191,5 +191,7 @@ for select
 to authenticated
 using ((bucket_id = 'events'::text));
 
+insert into storage.buckets(id, name, public) VALUES ('events', 'events', true);
+
 
 
