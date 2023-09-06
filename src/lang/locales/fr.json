@@ -233,9 +233,9 @@
         "0": "Pour le dispatch, on prend le montant parié par chaque perdant qu'on distribue en fonction des gains de chaque vainqueur.",
         "title": "Qui donne à qui ?",
         "example": {
-          "0": "Martine will give her 4 beers to the first winner, Cédric.",
-          "1": "Cédric will be short 2.4 beers to complete his winnings, which will be provided by Fabrice.",
-          "2": "The last 1.6 beers from Fabrice will then be given to the second winner, Édith."
+          "0": "Martine donnera ses 4 bières au premier vainqueur, Cedric.",
+          "1": "Cédric sera de courtes bières 2.4 pour compléter ses gains, qui seront fournis par Fabrice.",
+          "2": "Les 1.6 dernières bières de Fabrice seront ensuite remises au deuxième vainqueur, Édith."
         }
       }
     }
