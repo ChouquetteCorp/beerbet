@@ -8,7 +8,7 @@
   },
   "ErrorView": {
     "title": "Oups !",
-    "subtitle": "Page non trouvée.",
+    "subtitle": "Page non trouvée...",
     "helpers": "Nous sommes désolés, la page que tu recherches est probablement en train de profiter de son moment de gloire avec quelques cacahuètes en terasse...",
     "returnBtn": "Retourner à l'accueil"
   },
