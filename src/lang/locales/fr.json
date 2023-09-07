@@ -21,7 +21,7 @@
     "bettorsSentance": "1 parieur | {count} parieurs",
     "betToast": {
       "success": {
-        "title": "Bien joué !",
+        "title": "Bien joué !!",
         "detail": "1 bière pariée | {count} bières pariées"
       },
       "error": {
