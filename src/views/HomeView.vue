@@ -1,6 +1,7 @@
 <script setup lang="ts">
   import { useAuthStore } from '@/stores/auth'
   import { APP_ROUTES } from '@/constants'
+  import LeaderBoard from '@/components/leaderboard/LeaderBoard.vue'
 
   const { LOGIN, CREATE, MY_BETS } = APP_ROUTES
 
@@ -8,7 +9,7 @@
 </script>
 
 <template>
-  <div class="home">
+  <div class="home" :class="{ 'home--connected': auth.isConnected }">
     <h1>{{ $t('Home.title') }}</h1>
     <h2>{{ $t('Home.subtitle') }}</h2>
     <transition name="fade" mode="out-in">
@@ -26,18 +27,29 @@
         </RouterLink>
       </div>
     </transition>
+
+    <div v-if="auth.isConnected" class="home__sections">
+      <LeaderBoard class="leaderboard" />
+    </div>
   </div>
 </template>
 
 <style scoped lang="scss">
   .home {
-    margin-top: 15vh;
+    margin-top: 16vh;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    gap: 4vh;
     text-align: center;
+
+    transition: 0.5s ease-in-out;
+    gap: 4vh;
+
+    &--connected {
+      margin-top: 5vh;
+      gap: 2vh;
+    }
 
     h1 {
       font-size: 4.5rem;
@@ -59,6 +71,23 @@
 
     &__button {
       width: 12rem;
+    }
+
+    &__sections {
+      margin-top: 4vh;
+      display: flex;
+      row-gap: 1.5vh;
+      flex-direction: row;
+      gap: 1vw;
+      & > * {
+        width: 100%;
+      }
+      @include sm {
+        flex-direction: column;
+        & > * {
+          width: 30vw;
+        }
+      }
     }
   }
 </style>

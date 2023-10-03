@@ -283,5 +283,8 @@
       "searchBar": "Search",
       "title": "Matches",
       "bet": "Bet"
+    },
+    "Leaderboard": {
+      "title": "Leaderboard"
     }
   }
