@@ -32,6 +32,7 @@ export interface Event {
   invite_code: string
   date_finish?: string
   unit: EventUnit
+  countBet?: Record<string, number>
 }
 
 export enum EventUnit {

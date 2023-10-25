@@ -17,6 +17,7 @@ export const useEventStore = defineStore('event', () => {
   const userResult = ref<string | null>(null)
 
   const isMyEvent = computed(() => event.value?.author.user_id === auth.userId)
+  const nbBet = computed(() => Object.values(event.value?.countBet ?? 0).reduce((a, b) => a + b, 0))
 
   const recentlyFinishedEvents = computed(() => {
     if (!allEvents.value) return []
@@ -66,7 +67,23 @@ export const useEventStore = defineStore('event', () => {
 
     userBet.value = userBetData[0]
 
+    await setCountBet()
+
     await setDispatchResults()
+  }
+
+  async function setCountBet() {
+    if (!event.value) return
+
+    const { data: counts, error: errorCount } = await supabase.rpc('count_guess_for_event', { eventid: event.value.id })
+    if (errorCount) throw errorCount
+
+    const countBet: Record<string, number> = {}
+
+    event.value.propositions.forEach((proposition) => {
+      countBet[proposition] = counts.find(({ guess }: { guess: string }) => guess === proposition)?.sum ?? 0
+    })
+    event.value.countBet = countBet
   }
 
   async function setDispatchResults() {
@@ -102,6 +119,7 @@ export const useEventStore = defineStore('event', () => {
   async function updateBet(number: number, guess: string) {
     if (number === 0) await deleteBet()
     else await addBet(number, guess)
+    await setCountBet()
   }
 
   async function addBet(number: number, guess: string) {
@@ -173,6 +191,7 @@ export const useEventStore = defineStore('event', () => {
     isRecentlyFinishedEvents,
     isTargetEventRecentlyFinished,
     isMyEvent,
+    nbBet,
     setAllEvents,
     setEvent,
     setBettors,

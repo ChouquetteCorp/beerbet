@@ -29,7 +29,10 @@
         "detail": "You withdrew your bet"
       }
     },
-    "loginBtn": "Login to bet"
+    "loginBtn": "Login to bet",
+    "statsSection": {
+      "title": "Stats"
+    }
   },
   "CreateView": {
     "editTitle": "Edit the bet",
