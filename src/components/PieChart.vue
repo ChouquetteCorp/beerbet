@@ -19,7 +19,6 @@
   watch(
     () => props.datas,
     () => {
-      console.log('change')
       chartData.value = setChartData()
     },
     { deep: true },
