@@ -29,7 +29,10 @@
                 "detail": "Tu as retiré ton pari"
             }
         },
-        "loginBtn": "Se connecter pour parier"
+        "loginBtn": "Se connecter pour parier",
+        "statsSection": {
+            "title": "Stats"
+        }
     },
     "CreateView": {
         "editTitle": "Modifier le pari",
