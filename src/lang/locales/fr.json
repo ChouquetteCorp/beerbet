@@ -8,7 +8,7 @@
   },
   "ErrorView": {
     "title": "Oups !",
-    "subtitle": "Page non trouvée...",
+    "subtitle": "Page non trouvée.",
     "helpers": "Nous sommes désolés, la page que tu recherches est probablement en train de profiter de son moment de gloire avec quelques cacahuètes en terasse...",
     "returnBtn": "Retourner à l'accueil"
   },
@@ -21,7 +21,7 @@
     "bettorsSentance": "1 parieur | {count} parieurs",
     "betToast": {
       "success": {
-        "title": "Bien joué !!",
+        "title": "Bien joué !",
         "detail": "1 bière pariée | {count} bières pariées"
       },
       "error": {
@@ -288,6 +288,6 @@
     "bet": "Parier"
   },
   "Leaderboard": {
-    "title": "Leaderboard"
+    "title": "Classement"
   }
 }
