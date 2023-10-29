@@ -41,6 +41,7 @@
           class: () => (locale.value === code ? 'navbar__lang--active' : ''),
           command: () => {
             locale.value = code
+            localStorage.setItem('locale', code)
           },
         }
       }),

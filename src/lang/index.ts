@@ -19,7 +19,7 @@ function loadTranslations() {
 const translations = loadTranslations()
 
 const i18n = createI18n({
-  locale: navigator.language.split('-')[0],
+  locale: localStorage.getItem('locale') ?? navigator.language.split('-')[0],
   fallbackLocale: 'en',
   fallbackWarn: false,
   missingWarn: false,
