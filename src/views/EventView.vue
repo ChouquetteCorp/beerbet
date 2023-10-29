@@ -238,11 +238,17 @@
     }
 
     &__stats-content {
-      display: grid;
-      align-items: center;
+      display: flex;
+      align-items: stretch;
       justify-items: center;
-      justify-content: space-between;
-      grid-template-columns: repeat(2, 1fr);
+      justify-content: center;
+      gap: 2rem;
+
+      flex-direction: column;
+      @include sm {
+        flex-direction: row;
+        grid-template-columns: repeat(2, 1fr);
+      }
       & > * {
         margin: auto;
         width: 75%;

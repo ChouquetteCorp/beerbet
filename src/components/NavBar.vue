@@ -1,5 +1,5 @@
 <script setup lang="ts">
-  import { ref } from 'vue'
+  import { computed, ref } from 'vue'
   import { useRouter } from 'vue-router'
   import { useAuthStore } from '@/stores/auth'
   import Menubar from 'primevue/menubar'
@@ -9,11 +9,12 @@
   import { useDialog } from 'primevue/usedialog'
   import DynamicDialog from 'primevue/dynamicdialog'
   import ProfileEdition from './ProfileEdition.vue'
+  import { uppercaseFirstLetter } from '@/utils/string'
 
   const { HOME, LOGIN, MY_BETS, FAQ, CREATE, MATCHS } = APP_ROUTES
   const router = useRouter()
   const auth = useAuthStore()
-  const { t } = useI18n()
+  const { t, locale, availableLocales } = useI18n({ useScope: 'global' })
 
   const dialog = useDialog()
 
@@ -30,6 +31,20 @@
       to: MATCHS,
     },
     { label: t('FAQView.titleShort'), to: FAQ },
+    {
+      icon: 'pi pi-language',
+      items: (availableLocales as string[]).map((code) => {
+        const language = new Intl.DisplayNames([code], { type: 'language' }).of(code) ?? ''
+
+        return {
+          label: uppercaseFirstLetter(language),
+          class: () => (locale.value === code ? 'navbar__lang--active' : ''),
+          command: () => {
+            locale.value = code
+          },
+        }
+      }),
+    },
     { class: 'spacer', separator: true },
     {
       label: t('LoginView.title'),
@@ -80,7 +95,6 @@
   <div class="navbar-container">
     <Menubar :model="items" class="navbar" />
     <BeatLoader :loading="isLoading" color="var(--primary-color)" size="0.5rem" />
-
     <DynamicDialog />
   </div>
 </template>
@@ -113,7 +127,8 @@
     background: rgba(255, 255, 255, 0.03) !important;
   }
 
-  ::v-deep(.p-menuitem-link:focus :is(.p-menuitem-text, .p-menuitem-icon)) {
+  ::v-deep(.p-menuitem-link:focus :is(.p-menuitem-text, .p-menuitem-icon)),
+  ::v-deep(.navbar__lang--active) :is(.p-menuitem-text, .p-menuitem-icon) {
     color: var(--primary-color) !important;
   }
 
