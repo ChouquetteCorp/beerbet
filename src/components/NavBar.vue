@@ -18,7 +18,7 @@
 
   const dialog = useDialog()
 
-  const items = ref([
+  const items = computed(() => [
     { icon: 'pi pi-home', class: 'navbar__home', to: HOME },
     { label: t('MyBetsView.title'), to: MY_BETS, visible: () => auth.isConnected && !isLoading.value },
     {
