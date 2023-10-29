@@ -159,7 +159,7 @@
     },
     "EventResultsItem": {
       "giveMessage": "Tu dois {count} à {toUsername}",
-      "getMessage": "{fromUsername} te dois {count}"
+      "getMessage": "{fromUsername} te doit {count}"
     },
     "unit": "chouquette | chouquette | chouquettes",
     "LegalView": {
@@ -204,7 +204,7 @@
       },
       "EventResultsItem": {
         "giveMessage": "Tu dois {count} à {toUsername}",
-        "getMessage": "{fromUsername} te dois {count}"
+        "getMessage": "{fromUsername} te doit {count}"
       },
       "unit": "chouquette | chouquette | chouquettes",
       "LegalView": {
