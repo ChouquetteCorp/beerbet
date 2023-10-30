@@ -288,6 +288,10 @@
       "bet": "Bet"
     },
     "Leaderboard": {
-      "title": "Leaderboard"
+      "title": "Leaderboard",
+      "noResults": "You haven't bet yet."
+    },
+    "EventResultsItemUsername": {
+      "oldUsernames": "Old nicknames : "
     }
   }

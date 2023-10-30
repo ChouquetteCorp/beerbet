@@ -57,7 +57,7 @@
     }
     &__tooltip {
       display: inline-block;
-      min-width: 6rem;
+      min-width: 8.2rem;
       padding-right: 0;
       height: max-content;
       .p-tooltip-text {

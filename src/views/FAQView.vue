@@ -256,12 +256,12 @@
           :collapsed="true"
           class="faq__example">
           <p>
-            {{ $t('FAQView.Question2.dispatchParagraph.exemple.0') }}
+            {{ $t('FAQView.Question2.dispatchParagraph.example.0') }}
             <br />
-            {{ $t('FAQView.Question2.dispatchParagraph.exemple.1') }}
+            {{ $t('FAQView.Question2.dispatchParagraph.example.1') }}
             <br />
             <br />
-            {{ $t('FAQView.Question2.dispatchParagraph.exemple.2') }}
+            {{ $t('FAQView.Question2.dispatchParagraph.example.2') }}
             <br />
             <br />
           </p>
