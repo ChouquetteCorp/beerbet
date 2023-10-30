@@ -9,7 +9,7 @@
     "ErrorView": {
         "title": "Oups !",
         "subtitle": "Page non trouvée.",
-        "helpers": "We're sorry, the page you are looking for is probably enjoying its moment of glory with some peanuts in a pub...",
+        "helpers": "Nous sommes désolés, la page que tu recherches est probablement en train de profiter de son moment de gloire en tant que garniture d'un café gourmand...",
         "returnBtn": "Retourner à l'accueil"
     },
     "EventView": {
