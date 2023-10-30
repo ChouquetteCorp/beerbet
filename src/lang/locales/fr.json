@@ -235,10 +235,10 @@
       "dispatchParagraph": {
         "0": "Pour le dispatch, on prend le montant parié par chaque perdant qu'on distribue en fonction des gains de chaque vainqueur.",
         "title": "Qui donne à qui ?",
-        "exemple": {
-          "0": "Martine donnera ses 4 bières au premier vainqueur Cédric.",
-          "1": "Il manquera 2.4 bières à Cédric pour compléter son gain, elles seront remises par Fabrice.",
-          "2": "Les 1.6 dernières bières de Fabrice seront alors remises à la deuxième gagnante Édith."
+        "example": {
+          "0": "Martine donnera ses 4 bières au premier vainqueur, Cedric.",
+          "1": "Cédric sera de courtes bières 2.4 pour compléter ses gains, qui seront fournis par Fabrice.",
+          "2": "Les 1.6 dernières bières de Fabrice seront ensuite remises au deuxième vainqueur, Édith."
         }
       }
     }
@@ -286,5 +286,12 @@
     "searchBar": "Recherche",
     "title": "Matchs",
     "bet": "Parier"
+  },
+  "Leaderboard": {
+    "title": "Classement",
+    "noResults": "Vous n'avez pas encore parié."
+  },
+  "EventResultsItemUsername": {
+    "oldUsernames": "Anciens pseudos : "
   }
 }
