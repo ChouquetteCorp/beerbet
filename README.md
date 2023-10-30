@@ -6,7 +6,7 @@ BeerBet 🍻
 Experience a whole new way to enjoy your favorite matches with our sports betting site centered around fun and beers, without any money wagered.
 https://beer.chouquettebet.fr/
 
-> This project won an award as runner up Most fun category in [Supabase Launch Week 8 Hackathon](https://supabase.com/blog/launch-week-8-hackathon-winners).
+> This project won an award in the "Most fun" category of [Supabase Launch Week 8 Hackathon](https://supabase.com/blog/launch-week-8-hackathon-winners).
 
 
 ![social](https://github.com/ChouquetteCorp/beerbet/assets/20130405/767813f2-2dd1-4f75-81df-80b717f7b3f1)
