@@ -1,0 +1,5 @@
+files:
+  - source: /src/lang/locales/en.json
+    translation: /src/lang/locales/%two_letters_code%.json
+  - source: /templates/**/src/lang/locales/en.json
+    translation: /templates/**/src/lang/locales/%two_letters_code%.json

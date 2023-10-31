@@ -28,6 +28,8 @@
     "@onesignal/onesignal-vue3": "^1.0.2",
     "@supabase/supabase-js": "^2.21.0",
     "browser-image-compression": "^2.0.2",
+    "chart.js": "^4.4.0",
+    "colord": "^2.9.3",
     "pinia": "^2.0.35",
     "primeicons": "^6.0.1",
     "primevue": "^3.29.0",

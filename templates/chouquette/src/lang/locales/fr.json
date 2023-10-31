@@ -1,288 +1,297 @@
 {
     "Home": {
-      "title": "Chouquette Bet",
-      "subtitle": "Le premier site de paris en ligne, avec des chouquettes",
-      "loginBtn": "Connexion",
-      "myBetsBtn": "Mes paris",
-      "createBtn": "Créer un pari"
+        "title": "Chouquette Bet",
+        "subtitle": "Le premier site de paris en ligne, avec des chouquettes",
+        "loginBtn": "Connexion",
+        "myBetsBtn": "Mes paris",
+        "createBtn": "Créer un pari"
     },
     "ErrorView": {
-      "title": "Oups !",
-      "subtitle": "Page non trouvée.",
-      "helpers": "Nous sommes désolés, la page que tu recherches est probablement en train de profiter de son moment de gloire en tant que garniture d'un café gourmand...",
-      "returnBtn": "Retourner à l'accueil"
+        "title": "Oups !",
+        "subtitle": "Page non trouvée.",
+        "helpers": "Nous sommes désolés, la page que tu recherches est probablement en train de profiter de son moment de gloire en tant que garniture d'un café gourmand...",
+        "returnBtn": "Retourner à l'accueil"
     },
     "EventView": {
-      "title": "Pari",
-      "eventEnded": "Les paries sont clos, reviens plus tard pour voir les résultats !",
-      "editBtn": "Modifier mon pari",
-      "betBtn": "Parier sur cet évènement",
-      "btnLabel": "Tu as parié {myBet} chouquettes sur",
-      "bettorsSentance": "1 parieur | {count} parieurs",
-      "betToast": {
-        "success": {
-          "title": "Bien joué !",
-          "detail": "1 chouquette pariée | {count} chouquettes pariées"
+        "title": "Pari",
+        "eventEnded": "Les paries sont clos, reviens plus tard pour voir les résultats !",
+        "editBtn": "Modifier mon pari",
+        "betBtn": "Parier sur cet évènement",
+        "btnLabel": "Tu as parié {myBet} chouquettes sur",
+        "bettorsSentance": "1 parieur | {count} parieurs",
+        "betToast": {
+            "success": {
+                "title": "Bien joué !",
+                "detail": "1 chouquette pariée | {count} chouquettes pariées"
+            },
+            "error": {
+                "title": "Quelle tristesse :(",
+                "detail": "Tu as retiré ton pari"
+            }
         },
-        "error": {
-          "title": "Quelle tristesse :(",
-          "detail": "Tu as retiré ton pari"
+        "loginBtn": "Se connecter pour parier",
+        "statsSection": {
+            "title": "Stats"
         }
-      },
-      "loginBtn": "Se connecter pour parier"
     },
     "CreateView": {
-      "editTitle": "Modifier le pari",
-      "createTitle": "Créer un pari",
-      "title": "Titre",
-      "subtitle": "Sous titre",
-      "date": "Date",
-      "cover": "Couverture",
-      "invalidFileSizeMessage": "Le fichier est trop lourd (max. 10 MO)",
-      "invalidFileTypeMessage": "Le fichier n'est pas une image",
-      "chooseLabel": "Choisir une image",
-      "description": "Description",
-      "location": "Lieu",
-      "propositions": "Propositions (min. 2)",
-      "propositionsHelper": "Valide tes propositions en tapant sur",
-      "propositionsHelperKey": "Entrer",
-      "propositionsWarning": "Modifier les propositions faussera le résultat si quelqu'un a déjà parié",
-      "editBtn": "Modifier",
-      "createBtn": "Créer",
-      "chooseMatchNull": "Nul"
+        "editTitle": "Modifier le pari",
+        "createTitle": "Créer un pari",
+        "title": "Titre",
+        "subtitle": "Sous titre",
+        "date": "Date",
+        "cover": "Couverture",
+        "invalidFileSizeMessage": "Le fichier est trop lourd (max. 10 MO)",
+        "invalidFileTypeMessage": "Le fichier n'est pas une image",
+        "chooseLabel": "Choisir une image",
+        "description": "Description",
+        "location": "Lieu",
+        "propositions": "Propositions (min. 2)",
+        "propositionsHelper": "Valide tes propositions en tapant sur",
+        "propositionsHelperKey": "Entrer",
+        "propositionsWarning": "Modifier les propositions faussera le résultat si quelqu'un a déjà parié",
+        "editBtn": "Modifier",
+        "createBtn": "Créer",
+        "chooseMatchNull": "Nul"
     },
     "LoginView": {
-      "title": "Connexion",
-      "success": {
-        "message": "Tu viens de recevoir un email avec un lien de connexion. Clique sur ce lien pour te connecter.",
-        "waitingMessage": "Cela peut prendre quelques minutes, merci de patienter...",
-        "supportMessage": "Toujours rien après une dizaine de minutes ?",
-        "checkSpamMessage": "Tu as bien vérifié tes spams ?"
-      },
-      "contactMessage": "Contacte le support",
-      "error": "Echec de la connexion. Veuillez réessayer.",
-      "webviewMessage": "Tu es dans une « WebView », ce type de navigateur intégré ne respecte pas les conditions de sécurité pour te connecter via Google ou Facebook.",
-      "webviewMessageOpen": "Ouvre",
-      "webviewUse": "Ou utilise la",
-      "connectGoogle": "Connexion avec Google",
-      "connectFacebook": "Connexion avec Facebook",
-      "connectEmail": "Connexion par Email",
-      "email": "Email",
-      "waitMessage": "Veuillez patientez...",
-      "sendLinkMessage": "Envoyer un lien magique",
-      "linkInvalid": "Lien d'invitation invalide",
-      "prefixDate": "Le"
+        "title": "Connexion",
+        "success": {
+            "message": "Tu viens de recevoir un email avec un lien de connexion. Clique sur ce lien pour te connecter.",
+            "waitingMessage": "Cela peut prendre quelques minutes, merci de patienter...",
+            "supportMessage": "Toujours rien après une dizaine de minutes ?",
+            "checkSpamMessage": "Tu as bien vérifié tes spams ?"
+        },
+        "contactMessage": "Contacte le support",
+        "error": "Echec de la connexion. Veuillez réessayer.",
+        "webviewMessage": "Tu es dans une « WebView », ce type de navigateur intégré ne respecte pas les conditions de sécurité pour te connecter via Google ou Facebook.",
+        "webviewMessageOpen": "Ouvre",
+        "webviewUse": "Ou utilise la",
+        "connectGoogle": "Connexion avec Google",
+        "connectFacebook": "Connexion avec Facebook",
+        "connectEmail": "Connexion par Email",
+        "email": "Email",
+        "waitMessage": "Veuillez patientez...",
+        "sendLinkMessage": "Envoyer un lien magique",
+        "linkInvalid": "Lien d'invitation invalide",
+        "prefixDate": "Le"
     },
     "MyBetsView": {
-      "title": "Mes paris",
-      "empty": "Tu n'as encore aucun paris pour le moment...",
-      "inProgressTab": "En cours",
-      "passTab": "Passés",
-      "noInProgress": {
-        "0": " Tu n'as plus de paris en cours...",
-        "1": "Regarde sur l'onglet « Passés » pour consulter les anciens, ou créer en un nouveau 🙂"
-      },
-      "noPass": {
-        "0": "Tu n'as pas de paris passés...",
-        "1": "Regarde sur l'onglet « En cours » pour consulter les nouveaux, ou créer en un nouveau 🙂"
-      }
+        "title": "Mes paris",
+        "empty": "Tu n'as encore aucun paris pour le moment...",
+        "inProgressTab": "En cours",
+        "passTab": "Passés",
+        "noInProgress": {
+            "0": " Tu n'as plus de paris en cours...",
+            "1": "Regarde sur l'onglet « Passés » pour consulter les anciens, ou créer en un nouveau 🙂"
+        },
+        "noPass": {
+            "0": "Tu n'as pas de paris passés...",
+            "1": "Regarde sur l'onglet « En cours » pour consulter les nouveaux, ou créer en un nouveau 🙂"
+        }
     },
     "OfflineView": {
-      "title": "Tu es hors ligne 😕",
-      "subtitle": "Toutes les chouquettes se sont envolées...",
-      "helper": "Reconnectes-toi et elles reviendront 😉",
-      "toastDetails": "Essaye de te reconnecter à Internet"
+        "title": "Tu es hors ligne 😕",
+        "subtitle": "Toutes les chouquettes se sont envolées...",
+        "helper": "Reconnectes-toi et elles reviendront 😉",
+        "toastDetails": "Essaye de te reconnecter à Internet"
     },
     "PrivacyView": {
-      "title": "Politique de confidentialité"
+        "title": "Politique de confidentialité"
     },
     "EventActions": {
-      "deleteEvent": {
-        "title": "Supprimer le pari",
-        "message": "Es-tu sûr de vouloir supprimer ce pari ?"
-      },
-      "closeEvent": {
-        "title": "Clore le pari",
-        "endedTitle": "C'est la fin",
-        "endedMessage": "Le pari a été clôturé",
-        "errorSelect": "Veuillez choisir une option",
-        "selectOption": "Veuillez sélectionner l'option gagnante :"
-      }
+        "deleteEvent": {
+            "title": "Supprimer le pari",
+            "message": "Es-tu sûr de vouloir supprimer ce pari ?"
+        },
+        "closeEvent": {
+            "title": "Clore le pari",
+            "endedTitle": "C'est la fin",
+            "endedMessage": "Le pari a été clôturé",
+            "errorSelect": "Veuillez choisir une option",
+            "selectOption": "Veuillez sélectionner l'option gagnante :"
+        }
     },
     "errorMessage": "Une erreur est survenue",
     "error": "Erreur",
     "EventPreview": {
-      "eventEnded": "Pari terminé",
-      "eventRecentEnded": "Pari récemment terminé"
+        "eventEnded": "Pari terminé",
+        "eventRecentEnded": "Pari récemment terminé"
     },
     "BetModal": {
-      "questionGuess": "Pour quelle cause (perdu) paries-tu ?",
-      "title": "Parier sur cet évènement",
-      "questionNumber": "Combien de chouquettes souhaites-tu parier ? (max. 10)",
-      "submitBet": "Parier",
-      "cancelBet": "Annuler"
+        "questionGuess": "Pour quelle cause (perdu) paries-tu ?",
+        "title": "Parier sur cet évènement",
+        "questionNumber": "Combien de chouquettes souhaites-tu parier ? (max. 10)",
+        "submitBet": "Parier",
+        "cancelBet": "Annuler"
     },
     "EventResults": {
-      "winTitle": "Tu as gagné !",
-      "loseTitle": "Tu as perdu !",
-      "noneTitle": "C'est déjà fini...",
-      "rightAnswerIs": "La bonne réponse était",
-      "punchlineSameWin": {
-        "0": "Mais malheuresement pour toi,",
-        "1": "tout le monde a parié sur le bon cheval...",
-        "2": "Il n'y a donc aucun perdant !"
-      },
-      "punchlineSameLose": {
-        "0": "Mais heureusement pour toi,",
-        "1": "personne n'a parié sur le bon cheval...",
-        "2": "Il n'y a donc aucun gagnant !"
-      },
-      "gainInfo": "En cas de victoire, ta mise de départ n'est pas incluse dans le gain final :)",
-      "punchlineWin": [
-        "Nous savons que tu meurs d'envie de récupérer tes chouquettes, mais essayes de patienter encore un peu avant de faire une bêtise...",
-        "Nous t'invitons à aller réclamer ton dû avec la ou les personnes concernée(s), essaye simplement de rester pacifique...",
-        "Si la ou les personnes concernées(s) ne te règles par leurs dettes, tu as officiellement le droit d'organiser un octogone pour régler le litige...",
-        "Tout vient à point à qui sait attendre, mais en cas de doute, tu peux toujours aller mettre un coup de pression à la ou les personnes concernée(s)...",
-        "L'usage de force n'est pas encouragée par le staff dans la négociation..."
-      ],
-      "punchlineLose": [
-        "Dépêches-toi de régler tes dettes avant qu'un malheur n'arrive...",
-        "Une rumeur dit qu'une vendetta se prépare si tu ne payes pas tes dettes rapidement...",
-        "Attention, la chouquette c'est sérieux, et quelqu'un qui ne récupère pas son dû peut devenir dangereux...",
-        "Vite, paye tes dettes avant que quelqu'un ne te fasse payer plus cher...",
-        "Un bruit de couloir dit que quelqu'un est sur le point de te faire payer tes dettes si tu ne t'y prends pas toi même rapidement..."
-      ],
-      "seeResult": "Voir les résultats"
-    },
-    "EventResultsItem": {
-      "giveMessage": "Tu dois {count} à {toUsername}",
-      "getMessage": "{fromUsername} te dois {count}"
-    },
-    "unit": "chouquette | chouquette | chouquettes",
-    "LegalView": {
-      "title": "Mentions Légales"
-    },
-    "FAQView": {
-      "titleShort": "FAQ",
-      "title": "Foire aux questions",
-      "Question1": {
-        "title": "Quel est le déroulé d'un pari ?",
-        "BetParagraph": {
-          "0": "En amont de l'évènement, les utilisateurs peuvent parier sur le résultat de l'évènement.",
-          "1": "Chacun peut miser entre 1 et 10 chouquette(s).",
-          "title": "Parier"
+        "winTitle": "Tu as gagné !",
+        "loseTitle": "Tu as perdu !",
+        "noneTitle": "C'est déjà fini...",
+        "rightAnswerIs": "La bonne réponse était",
+        "punchlineSameWin": {
+            "0": "Mais malheuresement pour toi,",
+            "1": "tout le monde a parié sur le bon cheval...",
+            "2": "Il n'y a donc aucun perdant !"
         },
-        "CloseParagraph": {
-          "0": "La date de l'évènement passé, les paris sont clos. Il faut attendre que l'organisateur définisse la proposition gagnante.",
-          "1": "Les utilisateurs pourrons revenir plus tard découvrir les résultats.",
-          "title": "Évènement clos"
-        },
-        "ResultParagraph": {
-          "0": "Chaque parieur peut voir s'il remporte, ou s'il doit des chouquettes (et surtout, à qui).",
-          "1": "Exemple de résultats ",
-          "title": "Résultats"
+        "punchlineSameLose": {
+            "0": "Mais heureusement pour toi,",
+            "1": "personne n'a parié sur le bon cheval...",
+            "2": "Il n'y a donc aucun gagnant !"
         },
         "gainInfo": "En cas de victoire, ta mise de départ n'est pas incluse dans le gain final :)",
         "punchlineWin": [
-          "Nous savons que tu meurs d'envie de récupérer tes chouquettes, mais essayes de patienter encore un peu avant de faire une bêtise...",
-          "Nous t'invitons à aller réclamer ton dû avec la ou les personnes concernée(s), essaye simplement de rester pacifique...",
-          "Si la ou les personnes concernées(s) ne te règles par leurs dettes, tu as officiellement le droit d'organiser un octogone pour régler le litige...",
-          "Tout vient à point à qui sait attendre, mais en cas de doute, tu peux toujours aller mettre un coup de pression à la ou les personnes concernée(s)...",
-          "L'usage de force n'est pas encouragée par le staff dans la négociation..."
+            "Nous savons que tu meurs d'envie de récupérer tes chouquettes, mais essayes de patienter encore un peu avant de faire une bêtise...",
+            "Nous t'invitons à aller réclamer ton dû avec la ou les personnes concernée(s), essaye simplement de rester pacifique...",
+            "Si la ou les personnes concernées(s) ne te règles par leurs dettes, tu as officiellement le droit d'organiser un octogone pour régler le litige...",
+            "Tout vient à point à qui sait attendre, mais en cas de doute, tu peux toujours aller mettre un coup de pression à la ou les personnes concernée(s)...",
+            "L'usage de force n'est pas encouragée par le staff dans la négociation..."
         ],
         "punchlineLose": [
-          "Dépêches-toi de régler tes dettes avant qu'un malheur n'arrive...",
-          "Une rumeur dit qu'une vendetta se prépare si tu ne payes pas tes dettes rapidement...",
-          "Attention, la chouquette c'est sérieux, et quelqu'un qui ne récupère pas son dû peut devenir dangereux...",
-          "Vite, paye tes dettes avant que quelqu'un ne te fasse payer plus cher...",
-          "Un bruit de couloir dit que quelqu'un est sur le point de te faire payer tes dettes si tu ne t'y prends pas toi même rapidement..."
+            "Dépêches-toi de régler tes dettes avant qu'un malheur n'arrive...",
+            "Une rumeur dit qu'une vendetta se prépare si tu ne payes pas tes dettes rapidement...",
+            "Attention, la chouquette c'est sérieux, et quelqu'un qui ne récupère pas son dû peut devenir dangereux...",
+            "Vite, paye tes dettes avant que quelqu'un ne te fasse payer plus cher...",
+            "Un bruit de couloir dit que quelqu'un est sur le point de te faire payer tes dettes si tu ne t'y prends pas toi même rapidement..."
         ],
         "seeResult": "Voir les résultats"
-      },
-      "EventResultsItem": {
+    },
+    "EventResultsItem": {
         "giveMessage": "Tu dois {count} à {toUsername}",
-        "getMessage": "{fromUsername} te dois {count}"
-      },
-      "unit": "chouquette | chouquette | chouquettes",
-      "LegalView": {
+        "getMessage": "{fromUsername} te doit {count}"
+    },
+    "unit": "chouquette | chouquette | chouquettes",
+    "LegalView": {
         "title": "Mentions Légales"
-      },
-      "Question2": {
-        "title": "Comment le résultat est calculé ?",
-        "definitionParagraph": {
-          "0": "Chaque parieur choisit un nombre de chouquettes (entre 1 et 10) à parier sur une proposition.",
-          "1": "À la fin du pari, l’auteur de l’évènement définit la proposition gagnante en clôturant les paris.",
-          "2": "Dès lors, nous réalisons la somme des chouquettes pariées sur un choix perdant.",
-          "title": "Définition des gains",
-          "example": {
-            "0": "Nous avons 4 parieurs : Cédric, Martine, Fabrice et Édith.",
-            "1": "Cédric et Édith ont parié 8 et 2 chouquettes sur le choix vainqueur.",
-            "2": "Martine et Fabrice ont parié 4 et 4 chouquettes sur un des choix perdants.",
-            "3": "On fait la somme du nombre de chouquettes pariées sur les perdants ➜ « A » = 8",
-            "4": "On va donc diviser 8 chouquettes entre Cédric et Fabrice.",
-            "5": "Cédric a parié pour 80% (8/10) de la somme de chouquettes pariées sur le vainqueur. Édith 20% (2/10).",
-            "6": "Cédric emporte donc 80% des 8 chouquettes soit 6.4 chouquettes.",
-            "7": "Édith quant à elle, emporte 20% des 8 chouquettes soit 1.6 chouquette.",
-            "title": "Exemple",
-            "winner": "Vainqueur",
-            "loser": "Perdant",
-            "profit": "Gain"
-          }
+    },
+    "FAQView": {
+        "titleShort": "FAQ",
+        "title": "Foire aux questions",
+        "Question1": {
+            "title": "Quel est le déroulé d'un pari ?",
+            "BetParagraph": {
+                "0": "En amont de l'évènement, les utilisateurs peuvent parier sur le résultat de l'évènement.",
+                "1": "Chacun peut miser entre 1 et 10 chouquette(s).",
+                "title": "Parier"
+            },
+            "CloseParagraph": {
+                "0": "La date de l'évènement passé, les paris sont clos. Il faut attendre que l'organisateur définisse la proposition gagnante.",
+                "1": "Les utilisateurs pourrons revenir plus tard découvrir les résultats.",
+                "title": "Évènement clos"
+            },
+            "ResultParagraph": {
+                "0": "Chaque parieur peut voir s'il remporte, ou s'il doit des chouquettes (et surtout, à qui).",
+                "1": "Exemple de résultats ",
+                "title": "Résultats"
+            },
+            "gainInfo": "En cas de victoire, ta mise de départ n'est pas incluse dans le gain final :)",
+            "punchlineWin": [
+                "Nous savons que tu meurs d'envie de récupérer tes chouquettes, mais essayes de patienter encore un peu avant de faire une bêtise...",
+                "Nous t'invitons à aller réclamer ton dû avec la ou les personnes concernée(s), essaye simplement de rester pacifique...",
+                "Si la ou les personnes concernées(s) ne te règles par leurs dettes, tu as officiellement le droit d'organiser un octogone pour régler le litige...",
+                "Tout vient à point à qui sait attendre, mais en cas de doute, tu peux toujours aller mettre un coup de pression à la ou les personnes concernée(s)...",
+                "L'usage de force n'est pas encouragée par le staff dans la négociation..."
+            ],
+            "punchlineLose": [
+                "Dépêches-toi de régler tes dettes avant qu'un malheur n'arrive...",
+                "Une rumeur dit qu'une vendetta se prépare si tu ne payes pas tes dettes rapidement...",
+                "Attention, la chouquette c'est sérieux, et quelqu'un qui ne récupère pas son dû peut devenir dangereux...",
+                "Vite, paye tes dettes avant que quelqu'un ne te fasse payer plus cher...",
+                "Un bruit de couloir dit que quelqu'un est sur le point de te faire payer tes dettes si tu ne t'y prends pas toi même rapidement..."
+            ],
+            "seeResult": "Voir les résultats"
         },
-        "dispatchParagraph": {
-          "0": "Pour le dispatch, on prend le montant parié par chaque perdant qu'on distribue en fonction des gains de chaque vainqueur.",
-          "title": "Qui donne à qui ?",
-          "exemple": {
-            "0": "Martine donnera ses 4 chouquettes au premier vainqueur Cédric.",
-            "1": "Il manquera 2.4 chouquettes à Cédric pour compléter son gain, elles seront remises par Fabrice.",
-            "2": "Les 1.6 dernières chouquettes de Fabrice seront alors remises à la deuxième gagnante Édith."
-          }
+        "EventResultsItem": {
+            "giveMessage": "Tu dois {count} à {toUsername}",
+            "getMessage": "{fromUsername} te doit {count}"
+        },
+        "unit": "chouquette | chouquette | chouquettes",
+        "LegalView": {
+            "title": "Mentions Légales"
+        },
+        "Question2": {
+            "title": "Comment le résultat est calculé ?",
+            "definitionParagraph": {
+                "0": "Chaque parieur choisit un nombre de chouquettes (entre 1 et 10) à parier sur une proposition.",
+                "1": "À la fin du pari, l’auteur de l’évènement définit la proposition gagnante en clôturant les paris.",
+                "2": "Dès lors, nous réalisons la somme des chouquettes pariées sur un choix perdant.",
+                "title": "Définition des gains",
+                "example": {
+                    "0": "Nous avons 4 parieurs : Cédric, Martine, Fabrice et Édith.",
+                    "1": "Cédric et Édith ont parié 8 et 2 chouquettes sur le choix vainqueur.",
+                    "2": "Martine et Fabrice ont parié 4 et 4 chouquettes sur un des choix perdants.",
+                    "3": "On fait la somme du nombre de chouquettes pariées sur les perdants ➜ « A » = 8",
+                    "4": "On va donc diviser 8 chouquettes entre Cédric et Fabrice.",
+                    "5": "Cédric a parié pour 80% (8/10) de la somme de chouquettes pariées sur le vainqueur. Édith 20% (2/10).",
+                    "6": "Cédric emporte donc 80% des 8 chouquettes soit 6.4 chouquettes.",
+                    "7": "Édith quant à elle, emporte 20% des 8 chouquettes soit 1.6 chouquette.",
+                    "title": "Exemple",
+                    "winner": "Vainqueur",
+                    "loser": "Perdant",
+                    "profit": "Gain"
+                }
+            },
+            "dispatchParagraph": {
+                "0": "Pour le dispatch, on prend le montant parié par chaque perdant qu'on distribue en fonction des gains de chaque vainqueur.",
+                "title": "Qui donne à qui ?",
+                "example": {
+                    "0": "Martine donnera ses 4 chouquettes au premier vainqueur, Cedric.",
+                    "1": "Cédric sera de courte durée 2.4 chouquettes pour compléter ses gains, qui seront fournis par Fabrice.",
+                    "2": "Les derniers 1.6 chouquettes de Fabrice seront ensuite remis au deuxième vainqueur, Édith."
+                }
+            }
         }
-      }
     },
     "LogoutView": {
-      "title": "Déconnexion"
+        "title": "Déconnexion"
     },
     "ReloadPrompt": {
-      "message": "Nouvelle version disponible 🚀, clique pour recharger",
-      "btn": "Recharger"
+        "message": "Nouvelle version disponible 🚀, clique pour recharger",
+        "btn": "Recharger"
     },
     "ShareModal": {
-      "shareApiTitle": "Lien d'invitation | Chouquette Bet",
-      "copyToast": "Lien copié dans le presse papier",
-      "title": "Inviter des participants",
-      "btn": "Inviter",
-      "shareBtn": "Partage rapide"
+        "shareApiTitle": "Lien d'invitation | Chouquette Bet",
+        "copyToast": "Lien copié dans le presse papier",
+        "title": "Inviter des participants",
+        "btn": "Inviter",
+        "shareBtn": "Partage rapide"
     },
     "ProfileEdition": {
-      "titleShort": "Profil",
-      "username": "Nom d'utilisateur",
-      "save": "Sauvegarder",
-      "title": "Édition du profil"
+        "titleShort": "Profil",
+        "username": "Nom d'utilisateur",
+        "save": "Sauvegarder",
+        "title": "Édition du profil"
     },
     "ToastRecentlyFinishedEvents": {
-      "eventFinish": "Un pari est terminé 🎉",
-      "eventFinishDetails": {
-        "0": "Rends-toi vite sur",
-        "1": "pour découvrir l'évènement en question"
-      }
+        "eventFinish": "Un pari est terminé 🎉",
+        "eventFinishDetails": {
+            "0": "Rends-toi vite sur",
+            "1": "pour découvrir l'évènement en question"
+        }
     },
     "PWA": {
-      "name": "Chouquette Bet",
-      "short_name": "ChouquetteB.",
-      "description": "Le premier site de paris en ligne, avec des chouquettes"
+        "name": "Chouquette Bet",
+        "short_name": "ChouquetteB.",
+        "description": "Le premier site de paris en ligne, avec des chouquettes"
     },
     "MatchView": {
-      "tableHeader": {
-        "league": "Ligue",
-        "date": "Heure",
-        "venue": "Stade",
-        "match": "Match",
-        "city": "Ville"
-      },
-      "searchBar": "Recherche",
-      "title": "Matchs",
-      "bet": "Parier"
+        "tableHeader": {
+            "league": "Ligue",
+            "date": "Heure",
+            "venue": "Stade",
+            "match": "Match",
+            "city": "Ville"
+        },
+        "searchBar": "Recherche",
+        "title": "Matchs",
+        "bet": "Parier"
+    },
+    "Leaderboard": {
+        "title": "Classement",
+        "noResults": "Vous n'avez pas encore parié."
+    },
+    "EventResultsItemUsername": {
+        "oldUsernames": "Anciens pseudos : "
     }
-  }
-  
+}

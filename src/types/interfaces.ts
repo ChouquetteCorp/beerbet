@@ -32,6 +32,7 @@ export interface Event {
   invite_code: string
   date_finish?: string
   unit: EventUnit
+  countBet?: Record<string, number>
 }
 
 export enum EventUnit {
@@ -71,3 +72,14 @@ export interface Match {
   team_a: string
   team_b: string
 }
+
+export interface LeaderboardLine {
+  user_id: string
+  username: string
+  old_usernames: string[]
+  win: number
+  lost: number
+  score: number
+}
+
+export interface Leaderboard extends Array<LeaderboardLine> {}

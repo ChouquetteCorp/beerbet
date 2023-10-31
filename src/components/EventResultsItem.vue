@@ -2,7 +2,7 @@
   import { useAuthStore } from '@/stores/auth'
   import type { Result } from '@/types/interfaces'
   import { useI18n } from 'vue-i18n'
-  import EventResultsItemUsername from './EventResultsItemUsername.vue'
+  import UsernameLine from './UsernameLine.vue'
 
   const auth = useAuthStore()
   const { t } = useI18n()
@@ -22,16 +22,10 @@
           count: props.result.number + ' ' + t('unit', Math.trunc(props.result.number)),
         })
       }}
-      <EventResultsItemUsername
-        v-if="result.to"
-        :username="result.to.username"
-        :old-usernames="result.to.old_usernames" />
+      <UsernameLine v-if="result.to" :username="result.to.username" :old-usernames="result.to.old_usernames" />
     </template>
     <template v-else>
-      <EventResultsItemUsername
-        v-if="result.from"
-        :username="result.from.username"
-        :old-usernames="result.from.old_usernames" />
+      <UsernameLine v-if="result.from" :username="result.from.username" :old-usernames="result.from.old_usernames" />
       {{
         t('EventResultsItem.getMessage', {
           count: props.result.number + ' ' + t('unit', Math.trunc(props.result.number)),

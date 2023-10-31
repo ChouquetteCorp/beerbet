@@ -13,6 +13,9 @@
   import ShareModal from '@/components/ShareModal.vue'
   import { useRouter } from 'vue-router'
   import { useI18n } from 'vue-i18n'
+  import PieChart from '@/components/PieChart.vue'
+  import Fieldset from 'primevue/fieldset'
+  import BetCounter from '@/components/BetCounter.vue'
 
   const router = useRouter()
   const toast = useToast()
@@ -160,6 +163,13 @@
         <p v-if="bettors" class="event__bettors" :class="{ 'event__bettors--anim': isBettorsUpdated }">
           {{ $t('EventView.bettorsSentance', bettors) }}
         </p>
+
+        <Fieldset :legend="$t('EventView.statsSection.title')" :toggleable="true" collapsed>
+          <div class="event__stats-content">
+            <BetCounter :nb-bet="eventStore.nbBet" />
+            <PieChart :datas="event.countBet" class="event__chart" />
+          </div>
+        </Fieldset>
       </template>
     </Card>
     <BetModal
@@ -225,6 +235,24 @@
 
     &__description {
       white-space: pre-line;
+    }
+
+    &__stats-content {
+      display: flex;
+      align-items: stretch;
+      justify-items: center;
+      justify-content: center;
+      gap: 2rem;
+
+      flex-direction: column;
+      @include sm {
+        flex-direction: row;
+        grid-template-columns: repeat(2, 1fr);
+      }
+      & > * {
+        margin: auto;
+        width: 75%;
+      }
     }
 
     &__already-bet-wrapper {
