@@ -33,8 +33,8 @@ jobs:
           sudo apt-get install -y postgresql-15
       - name: Add matchs.sql to database Staging 
         run: |
-          psql -h "$HOST" -p 5432 -d postgres -U "postgres.$PRODUCTION_PROJECT_ID" -f matchs.football.sql
-          psql -h "$HOST" -p 5432 -d postgres -U "postgres.$PRODUCTION_PROJECT_ID" -f matchs.sql
+          psql -h "$HOST" -p 5432 -d postgres -U "postgres.$STAGING_PROJECT_ID" -f matchs.football.sql
+          psql -h "$HOST" -p 5432 -d postgres -U "postgres.$STAGING_PROJECT_ID" -f matchs.sql
         env:
           PGPASSWORD: ${{ secrets.STAGING_DB_PASSWORD }}
           HOST: ${{ secrets.STAGING_HOST }}
