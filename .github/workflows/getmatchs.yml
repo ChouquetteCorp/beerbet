@@ -46,5 +46,5 @@ jobs:
           psql -h "$HOST" -p 5432 -d postgres -U "postgres.$PRODUCTION_PROJECT_ID" -f matchs.sql
         env:
           PGPASSWORD: ${{ secrets.PRODUCTION_DB_PASSWORD }}
-          PRODUCTION_HOST: ${{ secrets.PRODUCTION_HOST }}
+          HOST: ${{ secrets.PRODUCTION_HOST }}
           PRODUCTION_PROJECT_ID: ${{ secrets.PRODUCTION_PROJECT_ID }}
