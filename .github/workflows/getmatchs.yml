@@ -33,16 +33,18 @@ jobs:
           sudo apt-get install -y postgresql-15
       - name: Add matchs.sql to database Staging 
         run: |
-          psql -h "db.$STAGING_PROJECT_ID.supabase.co" -p 5432 -d postgres -U postgres -f matchs.football.sql
-          psql -h "db.$STAGING_PROJECT_ID.supabase.co" -p 5432 -d postgres -U postgres -f matchs.sql
+          psql -h "$HOST" -p 5432 -d postgres -U "postgres.$STAGING_PROJECT_ID" -f matchs.football.sql
+          psql -h "$HOST" -p 5432 -d postgres -U "postgres.$STAGING_PROJECT_ID" -f matchs.sql
         env:
           PGPASSWORD: ${{ secrets.STAGING_DB_PASSWORD }}
+          HOST: ${{ secrets.STAGING_HOST }}
           STAGING_PROJECT_ID: ${{ secrets.STAGING_PROJECT_ID }}
 
       - name: Add matchs.sql to database Prod
         run: |
-          psql -h "db.$PRODUCTION_PROJECT_ID.supabase.co" -p 5432 -d postgres -U postgres -f matchs.football.sql
-          psql -h "db.$PRODUCTION_PROJECT_ID.supabase.co" -p 5432 -d postgres -U postgres -f matchs.sql
+          psql -h "$HOST" -p 5432 -d postgres -U "postgres.$PRODUCTION_PROJECT_ID" -f matchs.football.sql
+          psql -h "$HOST" -p 5432 -d postgres -U "postgres.$PRODUCTION_PROJECT_ID" -f matchs.sql
         env:
           PGPASSWORD: ${{ secrets.PRODUCTION_DB_PASSWORD }}
+          HOST: ${{ secrets.PRODUCTION_HOST }}
           PRODUCTION_PROJECT_ID: ${{ secrets.PRODUCTION_PROJECT_ID }}
