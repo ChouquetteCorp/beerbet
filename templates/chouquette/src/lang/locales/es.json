@@ -1,0 +1,297 @@
+{
+    "Home": {
+        "title": "Chouquette Bet",
+        "subtitle": "El primer sitio de apuestas en línea, con Chouquettes",
+        "loginBtn": "Ingresar",
+        "myBetsBtn": "Mis apuestas",
+        "createBtn": "Crear una apuesta"
+    },
+    "ErrorView": {
+        "title": "¡Ups!",
+        "subtitle": "Página no encontrada.",
+        "helpers": "Lo sentimos, la página que buscas probablemente esté disfrutando de su momento de gloria con algunos cacahuetes en un pub...",
+        "returnBtn": "Volver a casa"
+    },
+    "EventView": {
+        "title": "Apuesta",
+        "eventEnded": "Las apuestas están cerradas, ¡vuelve más tarde para ver los resultados!",
+        "editBtn": "Editar mi apuesta",
+        "betBtn": "Apostar en este evento",
+        "btnLabel": "Apostaste {myBet} Chouquettes en",
+        "bettorsSentance": "1 apuesta | {count} apostadores",
+        "betToast": {
+            "success": {
+                "title": "¡Enhorabuena!",
+                "detail": "1 Chouquette bet | {count} Chouquettes bet"
+            },
+            "error": {
+                "title": "Qué lástima :(",
+                "detail": "Has retirado tu apuesta"
+            }
+        },
+        "loginBtn": "Iniciar sesión para apostar",
+        "statsSection": {
+            "title": "Estadísticas"
+        }
+    },
+    "CreateView": {
+        "editTitle": "Editar la apuesta",
+        "createTitle": "Crear una apuesta",
+        "title": "Título",
+        "subtitle": "Subtítulo",
+        "date": "Fecha",
+        "cover": "Portada",
+        "invalidFileSizeMessage": "El archivo es demasiado grande (máx. 10 MB)",
+        "invalidFileTypeMessage": "El archivo no es una imagen",
+        "chooseLabel": "Elige una imagen",
+        "description": "Descripción",
+        "location": "Ubicación",
+        "propositions": "Propuestas (min. 2)",
+        "propositionsHelper": "Validar tus propuestas presionando",
+        "propositionsHelperKey": "Introducir",
+        "propositionsWarning": "Modificar las propuestas distorsionará el resultado si alguien ya ha apostado",
+        "editBtn": "Editar",
+        "createBtn": "Crear",
+        "chooseMatchNull": "Dibujar"
+    },
+    "LoginView": {
+        "title": "Ingresar",
+        "success": {
+            "message": "Acabas de recibir un correo electrónico con un enlace de inicio de sesión. Haz clic en este enlace para iniciar sesión.",
+            "waitingMessage": "Puede tardar unos minutos, por favor espere...",
+            "supportMessage": "¿Aún no has pasado nada después de diez minutos?",
+            "checkSpamMessage": "¿Has comprobado tu spam?"
+        },
+        "contactMessage": "Contactar con soporte",
+        "error": "Error al iniciar sesión. Vuelve a intentarlo.",
+        "webviewMessage": "Usted está en un \"WebView\", este tipo de navegador integrado no cumple las condiciones de seguridad para conectarse a través de Google o Facebook.",
+        "webviewMessageOpen": "Abrir",
+        "webviewUse": "O use el",
+        "connectGoogle": "Iniciar sesión con Google",
+        "connectFacebook": "Iniciar sesión con Facebook",
+        "connectEmail": "Iniciar sesión por email",
+        "email": "E-mail",
+        "waitMessage": "Por favor espere...",
+        "sendLinkMessage": "Enviar un enlace mágico",
+        "linkInvalid": "Enlace de invitación inválido",
+        "prefixDate": "En"
+    },
+    "MyBetsView": {
+        "title": "Mis apuestas",
+        "empty": "Aún no has hecho ninguna apuesta...",
+        "inProgressTab": "En progreso",
+        "passTab": "Pasado",
+        "noInProgress": {
+            "0": "Ya no tienes apuestas en curso...",
+            "1": "Marca la pestaña \"Pasar\" para ver las antiguas, o crea una nueva :► tly_smiling_face:"
+        },
+        "noPass": {
+            "0": "Usted no tiene ninguna apuesta pasada...",
+            "1": "Revisa la pestaña \"En progreso\" para ver las nuevas, o crea una nueva :► tly_smiling_face:"
+        }
+    },
+    "OfflineView": {
+        "title": "Estás desconectado de 😕",
+        "subtitle": "Todos los Chouquettes han desaparecido...",
+        "helper": "Reconexión y volverán 😉",
+        "toastDetails": "Intenta volver a conectar a Internet"
+    },
+    "PrivacyView": {
+        "title": "Política de privacidad"
+    },
+    "EventActions": {
+        "deleteEvent": {
+            "title": "Eliminar la apuesta",
+            "message": "¿Está seguro que desea eliminar esta apuesta?"
+        },
+        "closeEvent": {
+            "title": "Cerrar la apuesta",
+            "endedTitle": "Ha terminado",
+            "endedMessage": "La apuesta ha sido cerrada",
+            "errorSelect": "Por favor, elija una opción",
+            "selectOption": "Por favor, seleccione la opción ganadora:"
+        }
+    },
+    "errorMessage": "Se ha producido un error",
+    "error": "Error",
+    "EventPreview": {
+        "eventEnded": "Apuesta finalizada",
+        "eventRecentEnded": "Apuesta finalizada recientemente"
+    },
+    "BetModal": {
+        "questionGuess": "¿En qué causa (perdida) estás apostando?",
+        "title": "Apostar en este evento",
+        "questionNumber": "¿Cuántos Chouquettes desea apostar? (máx. 10)",
+        "submitBet": "Hacer apuesta",
+        "cancelBet": "Cancelar"
+    },
+    "EventResults": {
+        "winTitle": "¡Has ganado!",
+        "loseTitle": "¡Perdiste!",
+        "noneTitle": "Ya ha terminado...",
+        "rightAnswerIs": "La respuesta correcta fue",
+        "punchlineSameWin": {
+            "0": "Pero, por desgracia, para usted.",
+            "1": "cada uno apuesta en el caballo correcto...",
+            "2": "¡Así que no hay perdedor!"
+        },
+        "punchlineSameLose": {
+            "0": "Pero afortunadamente para ti.",
+            "1": "nadie apuesta al caballo derecho...",
+            "2": "¡Así que no hay ganador!"
+        },
+        "gainInfo": "En caso de ganar, tu apuesta inicial no está incluida en las ganancias finales :)",
+        "punchlineWin": [
+            "Sabemos que estás muriendo para recuperar tus Chouquettes, pero trata de ser paciente un poco más antes de hacer algo de forma suave...",
+            "Le invitamos a ir a reclamar lo que se le debe a usted de la persona o de las personas involucradas, sólo trate de permanecer en paz.",
+            "Si la persona o las personas involucradas no saldan sus deudas, usted oficialmente tiene el derecho de organizar un rostro para resolver la disputa...",
+            "Las cosas buenas vienen a los que esperan, pero cuando tienes dudas, siempre puedes ir y presionar a la persona (s) afectada...",
+            "El uso de la fuerza no es alentado por el personal durante las negociaciones..."
+        ],
+        "punchlineLose": [
+            "Date prisa y salda tus deudas antes de que algo malo suceda...",
+            "Un rumor dice que una vendetta está siendo planeada si no pagas tus deudas rápidamente...",
+            "Cuidado, Chouquette es serio, y alguien que no recibe lo que debe puede llegar a ser peligroso...",
+            "Rápido, paga tus deudas antes de que alguien te haga pagar aún más...",
+            "Un ave pequeña me dijo que alguien está a punto de hacerte pagar tus deudas si no las saldes rápidamente..."
+        ],
+        "seeResult": "Ver resultados"
+    },
+    "EventResultsItem": {
+        "giveMessage": "Debes {count} a {toUsername}",
+        "getMessage": "{fromUsername} te debe {count}"
+    },
+    "unit": "Chouquette | Chouquette | Chouquettes",
+    "LegalView": {
+        "title": "Aviso Legal"
+    },
+    "FAQView": {
+        "titleShort": "FAQ",
+        "title": "Preguntas frecuentes",
+        "Question1": {
+            "title": "¿Cómo funciona una apuesta?",
+            "BetParagraph": {
+                "0": "Antes del evento, los usuarios pueden apostar por el resultado del evento.",
+                "1": "Todos pueden apostar entre 1 y 10 Chouquette(s).",
+                "title": "Apuestas"
+            },
+            "CloseParagraph": {
+                "0": "Una vez que la fecha del evento ha pasado, las apuestas están cerradas. Los usuarios deben esperar a que el organizador defina la propuesta ganadora.",
+                "1": "Los usuarios pueden volver más tarde para ver los resultados.",
+                "title": "Evento cerrado"
+            },
+            "ResultParagraph": {
+                "0": "Cada apuesta puede ver si ganaron o deben Chouquettes (y especialmente, a quién).",
+                "1": "Ejemplo de resultados",
+                "title": "Resultados"
+            },
+            "gainInfo": "En caso de ganar, tu apuesta inicial no está incluida en las ganancias finales :)",
+            "punchlineWin": [
+                "Sabemos que estás muriendo para recuperar tus Chouquettes, pero trata de ser paciente un poco más antes de hacer algo de forma suave...",
+                "Le invitamos a ir a reclamar lo que se le debe a usted de la persona o de las personas involucradas, sólo trate de permanecer en paz.",
+                "Si la persona o las personas involucradas no saldan sus deudas, usted oficialmente tiene el derecho de organizar un rostro para resolver la disputa...",
+                "Las cosas buenas vienen a los que esperan, pero cuando tienes dudas, siempre puedes ir y presionar a la persona (s) afectada...",
+                "El uso de la fuerza no es alentado por el personal durante las negociaciones..."
+            ],
+            "punchlineLose": [
+                "Date prisa y salda tus deudas antes de que algo malo suceda...",
+                "Un rumor dice que una vendetta está siendo planeada si no pagas tus deudas rápidamente...",
+                "Cuidado, Chouquette es serio, y alguien que no recibe lo que debe puede llegar a ser peligroso...",
+                "Rápido, paga tus deudas antes de que alguien te haga pagar aún más...",
+                "Un ave pequeña me dijo que alguien está a punto de hacerte pagar tus deudas si no las saldes rápidamente..."
+            ],
+            "seeResult": "Ver resultados"
+        },
+        "EventResultsItem": {
+            "giveMessage": "Debes {count} a {toUsername}",
+            "getMessage": "{fromUsername} te debe {count}"
+        },
+        "unit": "Chouquette | Chouquette | Chouquettes",
+        "LegalView": {
+            "title": "Aviso Legal"
+        },
+        "Question2": {
+            "title": "¿Cómo se calcula el resultado?",
+            "definitionParagraph": {
+                "0": "Cada apuesta elige un número de Chouquettes (entre 1 y 10) para apostar a una propuesta.",
+                "1": "Al final de la apuesta, el autor del evento define la propuesta ganadora cerrando las apuestas.",
+                "2": "A continuación, resumimos la apuesta de Chouquettes a una elección perdida.",
+                "title": "Definir las ganancias",
+                "example": {
+                    "0": "Tenemos 4 bettors: Cédric, Martine, Fabrice, y Édith.",
+                    "1": "Cédric y Édith apuestan 8 y 2 Chouquettes en la elección ganadora.",
+                    "2": "Martine y Fabrice apuesta 4 y 4 Chouquettes en una de las opciones perdidas.",
+                    "3": "Resumimos la apuesta de Chouquettes a los perdedores de « A » = 8",
+                    "4": "Luego dividiremos los 8 Chouquettes entre Cédric y Fabrice.",
+                    "5": "Cédric apuesta por 80% (8/10) de la apuesta total de Chouquettes al ganador, Édith 20% (2/10).",
+                    "6": "Cédric por lo tanto toma el 80% de los 8 Chouquettes que son 6,4 Chouquettes.",
+                    "7": "Édith, por el contrario, absorbe el 20% de los 8 Chouquettes que son 1,6 Chouquette.",
+                    "title": "Ejemplo",
+                    "winner": "Ganador",
+                    "loser": "Perdedor",
+                    "profit": "Ganancias"
+                }
+            },
+            "dispatchParagraph": {
+                "0": "Para la distribución, tomamos la cantidad apostada por cada perdedor y la distribuimos en base a las ganancias de cada ganador.",
+                "title": "¿Quién da a quién?",
+                "example": {
+                    "0": "Martine le dará 4 Chouquettes al primer ganador, Cédric.",
+                    "1": "Cédric será corto 2.4 Chouquettes para completar sus ganancias, que serán proporcionadas por Fabrice.",
+                    "2": "Los últimos 1.6 Chouquettes de Fabrice serán entregados al segundo ganador, Édith."
+                }
+            }
+        }
+    },
+    "LogoutView": {
+        "title": "Cerrar sesión"
+    },
+    "ReloadPrompt": {
+        "message": "Nueva versión disponible 🚀, haga clic para recargar",
+        "btn": "Reload"
+    },
+    "ShareModal": {
+        "shareApiTitle": "Enlace de invitación | Apuesta en Chouquette",
+        "copyToast": "Enlace copiado al portapapeles",
+        "title": "Invitar participantes",
+        "btn": "Invitar",
+        "shareBtn": "Compartir rápido"
+    },
+    "ProfileEdition": {
+        "titleShort": "Perfil",
+        "username": "Usuario",
+        "save": "Guardar",
+        "title": "Edición del perfil"
+    },
+    "ToastRecentlyFinishedEvents": {
+        "eventFinish": "Una apuesta ha terminado 🎉",
+        "eventFinishDetails": {
+            "0": "Date prisa para",
+            "1": "para descubrir el evento en cuestión"
+        }
+    },
+    "PWA": {
+        "name": "Chouquette Bet",
+        "short_name": "Chouquette Bet",
+        "description": "El primer sitio de apuestas en línea, con Chouquettes"
+    },
+    "MatchView": {
+        "tableHeader": {
+            "league": "Liga",
+            "date": "Hora",
+            "venue": "Estadio",
+            "match": "Partida",
+            "city": "Ciudad"
+        },
+        "searchBar": "Buscar",
+        "title": "Partidas",
+        "bet": "Apuesta"
+    },
+    "Leaderboard": {
+        "title": "Leaderboard",
+        "noResults": "Aún no has apostado."
+    },
+    "EventResultsItemUsername": {
+        "oldUsernames": "Old nicknames : "
+    }
+}
