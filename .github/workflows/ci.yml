@@ -9,8 +9,8 @@ jobs:
   integration:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v3
-    - uses: actions/cache@v3
+    - uses: actions/checkout@v4
+    - uses: actions/cache@v4
       id: cache
       with:
         path: ~/.npm          
@@ -29,16 +29,16 @@ jobs:
     runs-on: ubuntu-22.04
     steps:
       - name: Checkout
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
       - name: Install dependencies
-        uses: cypress-io/github-action@v5
+        uses: cypress-io/github-action@v6
         with:
           # just perform install
           runTests: false
       - name: Start server in the background
         run: npm run supabase:start -- -x studio,imgproxy,inbucket,pgadmin-schema-diff,migra,postgres-meta,vector,pgbouncer,logflare
       - name: Cypress run
-        uses: cypress-io/github-action@v5
+        uses: cypress-io/github-action@v6
         with:
           install: false
           start: npm run dev:emulator

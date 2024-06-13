@@ -11,41 +11,41 @@
         "rugby": [
             {
                 "league": 52,
-                "season": 2022
+                "season": 2024
             },
             {
                 "league": 54,
-                "season": 2022
+                "season": 2024
             },
             {
                 "league": 16,
-                "season": 2022
+                "season": 2024
             },
             {
                 "league": 69,
-                "season": 2023
+                "season": 2024
             }
         ],
         "handball": [
             {
                 "league": 132,
-                "season": 2023
+                "season": 2024
             },
             {
                 "league": 32,
-                "season": 2023
+                "season": 2024
             },
             {
                 "league": 35,
-                "season": 2023
+                "season": 2024
             },
             {
                 "league": 29,
-                "season": 2023
+                "season": 2024
             },
             {
                 "league": 34,
-                "season": 2023
+                "season": 2024
             }
          ]
     }
