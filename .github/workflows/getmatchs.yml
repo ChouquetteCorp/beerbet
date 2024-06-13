@@ -10,14 +10,14 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
       - name: Get Matches
         run: |
           npx --yes api-sport-cli get-matchs -c .github/configApiSport/football.json -s matchs.football.sql -j matchs.football.json -u api_id
           npx --yes api-sport-cli get-matchs -c .github/configApiSport/default.json -s matchs.sql -j matchs.json -u api_id
         env:
           SPORT_API_KEY: ${{ secrets.SPORT_API_KEY }}
-      - uses: actions/upload-artifact@v3
+      - uses: actions/upload-artifact@v4
         with:
           name: matchs
           path: |
@@ -33,16 +33,18 @@ jobs:
           sudo apt-get install -y postgresql-15
       - name: Add matchs.sql to database Staging 
         run: |
-          psql -h "db.$STAGING_PROJECT_ID.supabase.co" -p 5432 -d postgres -U postgres -f matchs.football.sql
-          psql -h "db.$STAGING_PROJECT_ID.supabase.co" -p 5432 -d postgres -U postgres -f matchs.sql
+          psql -h "$HOST" -p 5432 -d postgres -U "postgres.$STAGING_PROJECT_ID" -f matchs.football.sql
+          psql -h "$HOST" -p 5432 -d postgres -U "postgres.$STAGING_PROJECT_ID" -f matchs.sql
         env:
           PGPASSWORD: ${{ secrets.STAGING_DB_PASSWORD }}
+          HOST: ${{ secrets.STAGING_HOST }}
           STAGING_PROJECT_ID: ${{ secrets.STAGING_PROJECT_ID }}
 
       - name: Add matchs.sql to database Prod
         run: |
-          psql -h "db.$PRODUCTION_PROJECT_ID.supabase.co" -p 5432 -d postgres -U postgres -f matchs.football.sql
-          psql -h "db.$PRODUCTION_PROJECT_ID.supabase.co" -p 5432 -d postgres -U postgres -f matchs.sql
+          psql -h "$HOST" -p 5432 -d postgres -U "postgres.$PRODUCTION_PROJECT_ID" -f matchs.football.sql
+          psql -h "$HOST" -p 5432 -d postgres -U "postgres.$PRODUCTION_PROJECT_ID" -f matchs.sql
         env:
           PGPASSWORD: ${{ secrets.PRODUCTION_DB_PASSWORD }}
+          HOST: ${{ secrets.PRODUCTION_HOST }}
           PRODUCTION_PROJECT_ID: ${{ secrets.PRODUCTION_PROJECT_ID }}
