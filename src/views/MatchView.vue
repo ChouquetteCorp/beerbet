@@ -47,7 +47,7 @@
     state-key="dt-state-match"
     filter-display="row"
     :value="matchStore.allMatchs"
-    :global-filter-fields="['league', 'date', 'match', 'venue']"
+    :global-filter-fields="['sport', 'league', 'date', 'match', 'venue']"
     paginator
     :rows="50">
     <template #header>
