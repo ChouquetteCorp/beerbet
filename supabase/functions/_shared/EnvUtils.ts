@@ -4,9 +4,9 @@ export function getDomain(unit: EventUnit) {
   if (Deno.env.get('BACKEND_ENV') === 'production') {
     switch (unit) {
       case EventUnit.CHOUQUETTE:
-        return 'https://chouquettebet.fr/'
+        return 'https://chouquette-bet.netlify.app/'
       case EventUnit.BEER:
-        return 'https://beer.chouquettebet.fr/'
+        return 'https://beerbet.netlify.app/'
     }
   } else {
     switch (unit) {
