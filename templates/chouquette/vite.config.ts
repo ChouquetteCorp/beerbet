@@ -12,7 +12,7 @@ export default defineConfig({
     vue(),
     Sitemap({
       dynamicRoutes: ['/login', '/faq', '/creation', '/error', '/offline', '/legal', '/privacy'],
-      hostname: 'https://chouquettebet.fr/',
+      hostname: 'https://chouquette-bet.netlify.app/',
     }),
     VitePWA({
       registerType: 'prompt',
