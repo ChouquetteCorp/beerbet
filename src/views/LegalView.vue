@@ -65,7 +65,7 @@
   <p>
     <strong>ChouquetteBet</strong>
     s’engage à sécuriser au mieux le site
-    <a href="https://chouquettebet.fr/">https://chouquettebet.fr/</a>
+    <a href="https://chouquette-bet.netlify.app/">https://chouquette-bet.netlify.app/</a>
     , cependant sa responsabilité ne pourra être mise en cause si des données indésirables sont importées et installées
     sur son site à son insu.
   </p>
@@ -90,7 +90,7 @@
       loi 78-17 du 6 janvier 1978 modifiée
     </a>
     , l’utilisateur du site
-    <a href="https://chouquettebet.fr/">https://chouquettebet.fr/</a>
+    <a href="https://chouquette-bet.netlify.app/">https://chouquette-bet.netlify.app/</a>
     dispose d’un droit d’accès, de modification et de suppression des informations collectées. Pour exercer ce droit,
     envoyez un message à notre Délégué à la Protection des Données :
     <strong>
@@ -107,15 +107,15 @@
   <h2>V - Liens hypertextes et cookies</h2>
   <p>
     Le site
-    <a href="https://chouquettebet.fr/">https://chouquettebet.fr/</a>
+    <a href="https://chouquette-bet.netlify.app/">https://chouquette-bet.netlify.app/</a>
     contient des liens hypertextes vers d’autres sites et dégage toute responsabilité à propos de ces liens externes ou
     des liens créés par d’autres sites vers
-    <a href="https://chouquettebet.fr/">https://chouquettebet.fr/</a>
+    <a href="https://chouquette-bet.netlify.app/">https://chouquette-bet.netlify.app/</a>
     .
   </p>
   <p>
     La navigation sur le site
-    <a href="https://chouquettebet.fr/">https://chouquettebet.fr/</a>
+    <a href="https://chouquette-bet.netlify.app/">https://chouquette-bet.netlify.app/</a>
     est susceptible de provoquer l’installation de cookie(s) sur l’ordinateur de l’utilisateur.
   </p>
   <p>
@@ -137,7 +137,7 @@
   <h2>VI - Droit applicable et attribution de juridiction</h2>
   <p>
     Tout litige en relation avec l’utilisation du site
-    <a href="https://chouquettebet.fr/">https://chouquettebet.fr/</a>
+    <a href="https://chouquette-bet.netlify.app/">https://chouquette-bet.netlify.app/</a>
     est soumis au droit français. En dehors des cas où la loi ne le permet pas, il est fait attribution exclusive de
     juridiction aux tribunaux compétents de
     <strong>Nantes, France</strong>
