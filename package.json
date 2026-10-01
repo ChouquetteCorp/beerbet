@@ -26,7 +26,7 @@
   },
   "dependencies": {
     "@onesignal/onesignal-vue3": "^1.0.2",
-    "@supabase/supabase-js": "^2.21.0",
+    "@supabase/supabase-js": "^2.117.2",
     "browser-image-compression": "^2.0.2",
     "chart.js": "^4.4.0",
     "colord": "^2.9.3",

@@ -1,5 +1,5 @@
 import { render } from 'https://deno.land/x/mustache_ts/mustache.ts'
-import * as OneSignal from 'https://esm.sh/@onesignal/node-onesignal@1.0.0-beta7?target=deno&no-check'
+import * as OneSignal from 'https://esm.sh/@onesignal/node-onesignal@5.18'
 import { EventUnit } from '../../../end-bet/computes/ComputeInterface.ts'
 import { NotificationType, renderMustache } from '../utils.ts'
 import TEMPLATES from './templates/index.ts'
@@ -22,9 +22,9 @@ export async function getEmailNotification(templateName: NotificationType, data:
   notification.email_subject = renderMustache(SUBJECTS[templateName], data)
   notification.email_body = await getTemplateEmailContent(templateName, data)
   notification.email_from_name = 'Cédric'
-  notification.email_from_address = 'no-reply@' + data.eventDomain
+  notification.email_from_address = 'no-reply@chouquette-bet.netlify.app'
 
-  notification.channel_for_external_user_ids = 'email'
+  notification.target_channel = 'email'
 
   return notification
 }

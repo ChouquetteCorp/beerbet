@@ -1,4 +1,4 @@
-import * as OneSignal from 'https://esm.sh/@onesignal/node-onesignal@1.0.0-beta7?target=deno&no-check'
+import * as OneSignal from 'https://esm.sh/@onesignal/node-onesignal@5.18'
 import { NotificationType, renderMustache } from '../utils.ts'
 
 const PUSH_TEMPLATE = {
@@ -29,7 +29,7 @@ export function getPushNotification(templateName: NotificationType, contents: Re
 
   const notification = Object.assign(new OneSignal.Notification(), template)
 
-  notification.channel_for_external_user_ids = 'push'
+  notification.target_channel = 'push'
 
   return notification
 }

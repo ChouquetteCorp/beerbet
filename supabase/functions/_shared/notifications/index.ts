@@ -1,4 +1,4 @@
-import * as OneSignal from 'https://esm.sh/@onesignal/node-onesignal@1.0.0-beta7?target=deno&no-check'
+import * as OneSignal from 'https://esm.sh/@onesignal/node-onesignal@5.18'
 import { EventUnit } from '../../end-bet/computes/ComputeInterface.ts'
 import { getEmailNotification } from './emails/index.ts'
 import { getPushNotification } from './push/index.ts'
@@ -16,28 +16,24 @@ export async function sendNotification(
   data: Record<string, string>,
   externalUserId: string[],
 ) {
-  ;(await Promise.all([getEmailNotification(notificationType, data), getPushNotification(notificationType, data)])).map(
-    async (notification) => {
-      let configuration
-      if (data.eventType === EventUnit.BEER) {
-        configuration = OneSignal.createConfiguration({
-          userKey: USER_AUTH_KEY,
-          appKey: ONESIGNAL_REST_API_KEY_BEER,
-        })
-        notification.app_id = ONESIGNAL_APP_ID_BEER
-      } else {
-        configuration = OneSignal.createConfiguration({
-          userKey: USER_AUTH_KEY,
-          appKey: ONESIGNAL_REST_API_KEY,
-        })
+  const notifications = await Promise.all([
+    getEmailNotification(notificationType, data),
+    getPushNotification(notificationType, data),
+  ])
 
-        notification.app_id = ONESIGNAL_APP_ID
-      }
+  await Promise.all(
+    notifications.map(async (notification) => {
+      const configuration = OneSignal.createConfiguration({
+        organizationApiKey: USER_AUTH_KEY,
+        restApiKey: ONESIGNAL_REST_API_KEY,
+      })
+
+      notification.app_id = ONESIGNAL_APP_ID
 
       const onesignal = new OneSignal.DefaultApi(configuration)
-      notification.include_external_user_ids = externalUserId
+      notification.include_aliases = { external_id: externalUserId }
       const onesignalApiRes = await onesignal.createNotification(notification)
       return onesignalApiRes
-    },
+    }),
   )
 }
