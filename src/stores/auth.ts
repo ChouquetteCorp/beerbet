@@ -32,7 +32,7 @@ export const useAuthStore = defineStore('auth', () => {
     if (sessionData) {
       // Promise which not need to be await
       setProfile()
-      onesignal.setExternalUserId(sessionData.user.id)
+      onesignal.login(sessionData.user.id)
       if (sessionData.user.email) onesignal.setEmail(sessionData.user.email)
       onesignal.showNativePrompt()
     }
