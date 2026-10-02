@@ -9,7 +9,7 @@ import ToastService from 'primevue/toastservice'
 import ConfirmationService from 'primevue/confirmationservice'
 import DialogService from 'primevue/dialogservice'
 import router from './router'
-import OneSignalVuePlugin from '@onesignal/onesignal-vue3'
+import { oneSignal } from './lib/onesignal'
 import Tooltip from 'primevue/tooltip'
 import i18n from './lang'
 
@@ -24,17 +24,7 @@ app.use(PrimeVue)
 app.use(ToastService)
 app.use(ConfirmationService)
 app.use(DialogService)
-app.use(OneSignalVuePlugin, {
-  appId: import.meta.env.VITE_ONESIGNAL_APP_ID,
-  safari_web_id: import.meta.env.VITE_ONESIGNAL_SAFARI_WEB_ID,
-  serviceWorkerParam: { scope: '/push/onesignal/' },
-  serviceWorkerPath: 'push/onesignal/OneSignalSDKWorker.js',
-  allowLocalhostAsSecureOrigin: true,
-  welcomeNotification: {
-    disable: true,
-    message: '',
-  },
-})
+app.config.globalProperties.$OneSignal = oneSignal
 app.directive('tooltip', Tooltip)
 
 app.component('PInputText', InputText)

@@ -4,11 +4,10 @@ import { supabase } from '@/lib/superbase'
 import { useEventStore } from '@/stores/event'
 import type { Session, Provider } from '@supabase/supabase-js'
 import type { Profile } from '@/types/interfaces'
-import { useOneSignal } from '@onesignal/onesignal-vue3'
+import { oneSignal, oneSignalReady } from '@/lib/onesignal'
 
 export const useAuthStore = defineStore('auth', () => {
   const eventStore = useEventStore()
-  const onesignal = useOneSignal()
   const session = ref<Session | null>(null)
   const profile = ref<Profile | null>(null)
   const isLogging = ref(false) // this can't currently be true by default (bug when refresh offline)
@@ -57,9 +56,10 @@ export const useAuthStore = defineStore('auth', () => {
 
   async function syncOneSignalUser(sessionData: Session) {
     try {
-      await onesignal.login(sessionData.user.id)
-      if (sessionData.user.email) onesignal.User.addEmail(sessionData.user.email)
-      await onesignal.Notifications.requestPermission()
+      await oneSignalReady
+      await oneSignal.login(sessionData.user.id)
+      if (sessionData.user.email) oneSignal.User.addEmail(sessionData.user.email)
+      await oneSignal.Notifications.requestPermission()
     } catch (error) {
       console.error(error)
     }
@@ -69,7 +69,7 @@ export const useAuthStore = defineStore('auth', () => {
     const { error } = await supabase.auth.signOut()
     if (error) throw error
     try {
-      await onesignal.logout()
+      await oneSignal.logout()
     } catch (error) {
       console.error(error)
     }
