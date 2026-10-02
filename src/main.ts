@@ -29,10 +29,10 @@ app.use(OneSignalVuePlugin, {
   safari_web_id: import.meta.env.VITE_ONESIGNAL_SAFARI_WEB_ID,
   serviceWorkerParam: { scope: '/push/onesignal/' },
   serviceWorkerPath: 'push/onesignal/OneSignalSDKWorker.js',
-  serviceWorkerUpdaterPath: 'push/onesignal/OneSignalSDKWorker.js',
   allowLocalhostAsSecureOrigin: true,
   welcomeNotification: {
     disable: true,
+    message: '',
   },
 })
 app.directive('tooltip', Tooltip)

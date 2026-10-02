@@ -1,4 +1,3 @@
-import { uppercaseFirstLetter } from '@/utils/string'
 import { createI18n } from 'vue-i18n'
 
 function loadTranslations() {

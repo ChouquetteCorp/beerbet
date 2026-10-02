@@ -1,5 +1,4 @@
 import * as OneSignal from 'https://esm.sh/@onesignal/node-onesignal@5.18'
-import { EventUnit } from '../../end-bet/computes/ComputeInterface.ts'
 import { getEmailNotification } from './emails/index.ts'
 import { getPushNotification } from './push/index.ts'
 import { NotificationType } from './utils.ts'
@@ -7,9 +6,6 @@ import { NotificationType } from './utils.ts'
 const USER_AUTH_KEY = Deno.env.get('USER_AUTH_KEY')!
 const ONESIGNAL_APP_ID = Deno.env.get('ONESIGNAL_APP_ID')!
 const ONESIGNAL_REST_API_KEY = Deno.env.get('ONESIGNAL_REST_API_KEY')!
-
-const ONESIGNAL_APP_ID_BEER = Deno.env.get('ONESIGNAL_APP_ID_BEER')!
-const ONESIGNAL_REST_API_KEY_BEER = Deno.env.get('ONESIGNAL_REST_API_KEY_BEER')!
 
 export async function sendNotification(
   notificationType: NotificationType,

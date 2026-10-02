@@ -32,9 +32,7 @@ export const useAuthStore = defineStore('auth', () => {
     if (sessionData) {
       // Promise which not need to be await
       setProfile()
-      onesignal.setExternalUserId(sessionData.user.id)
-      if (sessionData.user.email) onesignal.setEmail(sessionData.user.email)
-      onesignal.showNativePrompt()
+      void syncOneSignalUser(sessionData)
     }
 
     isLogging.value = false
@@ -57,9 +55,24 @@ export const useAuthStore = defineStore('auth', () => {
     eventStore.resetEventStore()
   }
 
+  async function syncOneSignalUser(sessionData: Session) {
+    try {
+      await onesignal.login(sessionData.user.id)
+      if (sessionData.user.email) onesignal.User.addEmail(sessionData.user.email)
+      await onesignal.Notifications.requestPermission()
+    } catch (error) {
+      console.error(error)
+    }
+  }
+
   async function logout() {
     const { error } = await supabase.auth.signOut()
     if (error) throw error
+    try {
+      await onesignal.logout()
+    } catch (error) {
+      console.error(error)
+    }
     resetStore()
   }
 
