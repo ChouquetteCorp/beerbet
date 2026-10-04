@@ -13,51 +13,55 @@
         "football": [
             {
                 "league": 66,
-                "season": 2024
+                "season": 2026
             },
             {
                 "league": 64,
-                "season": 2024
+                "season": 2026
             },
             {
                 "league": 61,
-                "season": 2024
+                "season": 2026
             },
             {
                 "league": 2,
-                "season": 2024
+                "season": 2026
             },
             {
                 "league": 525,
-                "season": 2024
+                "season": 2026
             },
             {
                 "league": 3,
-                "season": 2024
+                "season": 2026
             },
             {
                 "league": 8,
-                "season": 2024
+                "season": 2026
             },
             {
                 "league": 4,
-                "season": 2024
+                "season": 2026
             },
             {
                 "league": 10,
-                "season": 2024
+                "season": 2026
             },
             {
                 "league": 6110,
-                "season": 2024
+                "season": 2026
             },
             {
                 "league": 6111,
-                "season": 2024
+                "season": 2026
             },
             {
                 "league": 5932,
-                "season": 2024
+                "season": 2026
+            },
+            {
+                "league": 62,
+                "season": 2026
             }
         ]
     }
