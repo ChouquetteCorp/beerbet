@@ -2,18 +2,13 @@ import * as OneSignal from 'https://esm.sh/@onesignal/node-onesignal@5.18'
 import { getEmailNotification } from './emails/index.ts'
 import { getPushNotification } from './push/index.ts'
 import { NotificationType } from './utils.ts'
+import { EventUnit } from '../../end-bet/computes/ComputeInterface.ts'
 
 const USER_AUTH_KEY = Deno.env.get('USER_AUTH_KEY')!
 const ONESIGNAL_APP_ID = Deno.env.get('ONESIGNAL_APP_ID')!
 const ONESIGNAL_REST_API_KEY = Deno.env.get('ONESIGNAL_REST_API_KEY')!
 const ONESIGNAL_APP_ID_BEER = Deno.env.get('ONESIGNAL_APP_ID_BEER')!
-
-const onesignal = new OneSignal.DefaultApi(
-  OneSignal.createConfiguration({
-    userKey: USER_AUTH_KEY,
-    appKey: ONESIGNAL_REST_API_KEY,
-  }),
-)
+const ONESIGNAL_REST_API_KEY_BEER = Deno.env.get('ONESIGNAL_REST_API_KEY_BEER')!
 
 export async function sendNotification(
   notificationType: NotificationType,
@@ -27,12 +22,22 @@ export async function sendNotification(
 
   await Promise.all(
     notifications.map(async (notification) => {
+      let configuration
       if (data.eventType === EventUnit.BEER) {
+        configuration = OneSignal.createConfiguration({
+          organizationApiKey: USER_AUTH_KEY,
+          restApiKey: ONESIGNAL_REST_API_KEY_BEER,
+        })
         notification.app_id = ONESIGNAL_APP_ID_BEER
       } else {
+        configuration = OneSignal.createConfiguration({
+          organizationApiKey: USER_AUTH_KEY,
+          restApiKey: ONESIGNAL_REST_API_KEY,
+        })
         notification.app_id = ONESIGNAL_APP_ID
       }
 
+      const onesignal = new OneSignal.DefaultApi(configuration)
       notification.include_aliases = { external_id: externalUserId }
       const onesignalApiRes = await onesignal.createNotification(notification)
       return onesignalApiRes
